@@ -1,0 +1,32 @@
+<div class="pageheader">
+  <h2><i class="fa fa-file-text-o"></i> Post <span>show</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">Post</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_tag nil, class: 'form-horizontal form-bordered' do %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.name' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @post.title, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.description' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :description, @post.content, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to 'Return', cms_posts_path, class: 'btn btn-default' %>&nbsp;
+      <%= link_to 'Edit', edit_cms_post_path(@post), class: 'btn btn-primary' %>&nbsp;
+      <%= link_to 'Delete', [:cms, @post], method: :delete, data: { confirm: '确定要删除吗？' }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

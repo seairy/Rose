@@ -1,0 +1,101 @@
+<div class="container home-summary">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="home-popular">
+        <div class="header">
+          <h2>Popular</h2>
+        </div>
+        <div class="content">
+          <% @posts[0..14].each do |post| %>
+          <div class="row home-popular-post">
+            <div class="col-xs-12 text">
+              <h4><%= link_to post.title(I18n.locale), post %></h4>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="home-carousel">
+        <div id="home-carousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#home-carousel" data-slide-to="1"></li>
+            <li data-target="#home-carousel" data-slide-to="2"></li>
+            <li data-target="#home-carousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <% @posts[0..3].each_with_index do |post, i| %>
+            <div class="item<%= ' active' if i.zero? %>">
+              <%= image_tag(post.cover.w640_h480_fl_q50) %>
+              <div class="carousel-caption">
+                <h3><%= post.title(I18n.locale) %></h3>
+                <p><%= post.home_description(I18n.locale) %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <a class="left carousel-control" href="#home-carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#home-carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="home-ad"></div>
+      <div class="home-ad"></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <section class="home-posts">
+        <% @posts[0..4].each do |post| %>
+        <div class="home-post">
+          <article>
+            <%= link_to image_tag(post.cover.w640_h480_fl_q50, class: 'img-responsive'), post %>
+            <div class="category"><%= link_to post.category.name(I18n.locale), '#' %></div>
+            <h2 class="title"><%= link_to post.title(I18n.locale), post %></h2>
+            <div class="description"><%= post.home_description(I18n.locale).truncate(100) %></div>
+          </article>
+        </div>
+        <% end %>
+        <div class="home-recommended">
+          <div class="header">
+            <h2>Recommended</h2>
+          </div>
+          <div class="content">
+            <% @posts[0..10].each do |post| %>
+            <div class="row home-recommended-post">
+              <div class="col-sm-4 image">
+                <%= image_tag(post.cover.w640_h480_fl_q50, class: 'img-responsive') %>
+              </div>
+              <div class="col-sm-8 text">
+                <h3><%= link_to post.title(I18n.locale), post %></h3>
+                <div class="meta"><span class="timeago">1 week ago</span></div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <% @posts[5..19].each do |post| %>
+        <div class="col-sm-4 home-post">
+          <article>
+            <%= link_to image_tag(post.cover.w640_h480_fl_q50, class: 'img-responsive'), post %>
+            <div class="category"><%= link_to post.category.name(I18n.locale), '#' %></div>
+            <h2 class="title"><%= link_to post.title(I18n.locale), post %></h2>
+            <div class="description"><%= post.home_description(I18n.locale).truncate(100) %></div>
+          </article>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
