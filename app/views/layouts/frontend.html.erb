@@ -13,14 +13,14 @@
     <![endif]-->
   </head>
   <body>
-    <div id="logo" class="container">
+    <div class="container">
       <div class="row">
-        <div class="col-sm-2 col-sm-offset-5">
-          <%= image_tag 'frontend/logo.png', class: 'img-responsive' %>
+        <div class="col-sm-4 col-sm-offset-4 logo">
+          <%= image_tag 'frontend/logo.png', class: 'img-responsive center-block' %>
         </div>
       </div>
     </div>
-    <div id="header" class="container-fluid">
+    <header class="wrap">
       <div class="container">
         <div class="row">
           <div class="col-sm-2">
@@ -30,35 +30,63 @@
               <div class="col-sm-12 meta">Search</div>
             </div>
           </div>
-          <div class="col-sm-6"></div>
-          <div class="col-sm-4">
-            <h1>UKLaomao</h1>
+          <div class="col-sm-3 pull-right title">
+            <h1><%= t('view.home.title')%></h1>
+          </div>
+          <div class="col-sm-2 pull-right language">
+            <% if I18n.locale == :en %>
+            <%= link_to image_tag('frontend/flag_cn.png', class: 'img-responsive'), url_for(locale: :zh) %>
+            <% else %>
+            <%= link_to image_tag('frontend/flag_en.png', class: 'img-responsive'), url_for(locale: :en) %>
+            <% end %>
           </div>
         </div>
       </div>
-    </div>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <% @categories.each do |category| %>
-              <li><%= link_to category.name(I18n.locale), '#' %></li>
-              <% end %>
-            </ul>
-          </div>
+    </header>
+    <nav class="wrap navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <% @categories.each do |category| %>
+            <li><%= link_to category.name(I18n.locale), '#' %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </nav>
     <%= yield %>
+    <footer class="wrap-related">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <%= link_to 'about' %>
+          </div>
+          <div class="col-sm-4">
+            <%= link_to 'experts' %>
+          </div>
+          <div class="col-sm-4">
+            <%= link_to 'dcma' %>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="wrap-copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+             <p class="text-center">© 2014, 2015 SPARKLE BRITAIN LTD. ALL RIGHTS RESERVED.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
   </body>
 </html>

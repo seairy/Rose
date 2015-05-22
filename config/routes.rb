@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   get '', to: redirect('/en')
   scope "/:locale", :locale => /en|zh/ do
     root 'frontend/home#index'
+    get 'new_home', to: 'frontend/home#index_new'
     resources :categories
     resources :posts
   end
   namespace :cms do
     root 'dashboard#index'
     get 'dashboard', to: 'dashboard#index', as: :dashboard
+    resources :categories
     resources :posts
     resources :administrators
     resource :profile do

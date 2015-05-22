@@ -1,0 +1,35 @@
+<div class="pageheader">
+  <h2><i class="fa fa-list"></i> Categories <span>List</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-primary table-striped mb30">
+          <thead>
+            <tr>
+              <th><%= brac_t 'category.icon' %></th>
+              <th><%= brac_t 'category.en_name' %></th>
+              <th><%= brac_t 'category.zh_name' %></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @categories.each do |category| %>
+            <tr>
+              <td><%= category.icon %></td>
+              <td><%= category.en_name %></td>
+              <td><%= category.zh_name %></td>
+              <td class="table-action">
+                <%= link_to raw('<i class="fa fa-file-text-o"></i>'), [:cms, category] %>
+                <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_cms_category_path(category) %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

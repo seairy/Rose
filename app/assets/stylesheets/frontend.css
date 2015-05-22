@@ -1,5 +1,6 @@
+//= require frontend/reset
 //= require frontend/bootstrap
 //= require frontend/bootstrap-theme
 //= require frontend/fonts/open_sans
 //= require frontend/fonts/oswald
-//= require frontend/screen
+//= require frontend/style
