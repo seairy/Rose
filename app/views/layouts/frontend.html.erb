@@ -15,7 +15,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-4 col-sm-offset-4 logo">
+        <div class="col-sm-2 col-sm-offset-5 col-xs-2 col-xs-offset-5 logo">
           <%= image_tag 'frontend/logo.png', class: 'img-responsive center-block' %>
         </div>
       </div>
@@ -25,17 +25,15 @@
         <div class="row">
           <div class="col-sm-2">
             <div class="row">
-              <div class="col-sm-12 meta">Username</div>
-              <div class="col-sm-12 meta">Subscribe</div>
+              <div class="col-sm-12 meta">username</div>
+              <div class="col-sm-12 meta">subscribe</div>
               <div class="col-sm-12 meta">
-                <input type="text" placeholder="Search..." />
+                <input type="text" placeholder="search..." />
               </div>
             </div>
           </div>
-          <div class="col-sm-3 pull-right title">
+          <div class="col-sm-4 pull-right language">
             <h1><%= t('view.home.title')%></h1>
-          </div>
-          <div class="col-sm-2 pull-right language">
             <% if I18n.locale == :en %>
             <%= link_to image_tag('frontend/flag_cn.png', class: 'img-responsive'), url_for(locale: :zh) %>
             <% else %>
@@ -65,6 +63,15 @@
       </div>
     </nav>
     <%= yield %>
+    <div class="wrap-archive">
+      <div class="container">
+        <div class="row">
+          <% @posts[0..29].each do |post| %>
+          <div class="col-sm-4"><%= link_to post.title(I18n.locale), '#' %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <footer class="wrap-related">
       <div class="container">
         <div class="row">
@@ -84,7 +91,12 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-             <p class="text-center">© 2014, 2015 SPARKLE BRITAIN LTD. ALL RIGHTS RESERVED.</p>
+            <p class="text-center">© 2014, 2015 SPARKLE BRITAIN LTD. ALL RIGHTS RESERVED.</p>
+            <% if I18n.locale == :en %>
+            <%= image_tag('frontend/copyright_en.png', class: 'img-responsive center-block') %>
+            <% else %>
+            <%= image_tag('frontend/copyright_cn.png', class: 'img-responsive center-block') %>
+            <% end %>
           </div>
         </div>
       </div>

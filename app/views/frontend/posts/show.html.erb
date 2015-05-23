@@ -1,0 +1,15 @@
+<article class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h1><%= @post.title(I18n.locale) %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <%= image_tag(@post.cover.w800_h600_fl_q80) %>
+    </div>
+    <div class="col-md-2">
+      <p><%= @post.description(I18n.locale) %></p>
+    </div>
+  </div>
+</article>

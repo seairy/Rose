@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   get '', to: redirect('/en')
-  scope "/:locale", :locale => /en|zh/ do
-    root 'frontend/home#index'
+  scope "/:locale", locale: /en|zh/, module: 'frontend' do
+    root 'home#index'
     get 'new_home', to: 'frontend/home#index_new'
     resources :categories
     resources :posts
