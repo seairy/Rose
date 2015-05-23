@@ -40,6 +40,7 @@ nav.wrap {
   box-shadow: none;
   ul.navbar-nav {
     li {
+      text-align: center;
       a {
         font-family: $heading_font;
         font-size: 16px;
@@ -76,7 +77,7 @@ nav.wrap {
 
 .home-ads {
   .home-ad {
-    margin-bottom: 10px;
+    margin-bottom: 13px;
     width: 100%;
     background-color: #428bca;
   }
@@ -204,6 +205,9 @@ footer.wrap-copyright {
     margin-left: -5px;
     margin-right: -5px;
   }
+  ul.navbar-nav > li {
+    min-width: 86px;
+  }
   .home-popular {
     ul.home-popular-posts {
       height: 430px;
@@ -216,7 +220,7 @@ footer.wrap-copyright {
   }
   .home-ads {
     .home-ad {
-      height: 148px;
+      height: 147px;
     }
   }
 }
@@ -230,9 +234,12 @@ footer.wrap-copyright {
     margin-left: -5px;
     margin-right: -5px;
   }
+  ul.navbar-nav > li {
+    min-width: 106px;
+  }
   .home-popular {
     ul.home-popular-posts {
-      height: 530px;
+      height: 529px;
     }
   }
   .home-ads {
