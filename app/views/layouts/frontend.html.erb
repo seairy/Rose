@@ -16,7 +16,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-2 col-sm-offset-5 col-xs-2 col-xs-offset-5 logo">
-          <%= image_tag 'frontend/logo.png', class: 'img-responsive center-block' %>
+          <%= link_to image_tag('frontend/logo.png', class: 'img-responsive center-block'), root_path %>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="col-sm-10 pull-right language">
-            <h1><%= t('view.home.title')%></h1>
+            <h1><%= t('view.home.title') %></h1>
             <% if I18n.locale == :en %>
             <%= link_to image_tag('frontend/flag_cn.png', class: 'img-responsive'), url_for(locale: :zh) %>
             <% else %>
@@ -63,15 +63,6 @@
       </div>
     </nav>
     <%= yield %>
-    <div class="wrap-archive">
-      <div class="container">
-        <div class="row">
-          <% @posts[0..29].each do |post| %>
-          <div class="col-sm-4"><%= link_to post.title(I18n.locale), '#' %></div>
-          <% end %>
-        </div>
-      </div>
-    </div>
     <footer class="wrap-related">
       <div class="container">
         <div class="row">

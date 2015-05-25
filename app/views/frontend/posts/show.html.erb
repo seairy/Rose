@@ -1,15 +1,40 @@
-<article class="container">
+<div class="container post-show">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h1><%= @post.title(I18n.locale) %></h1>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-10">
+  <div class="row mb20">
+    <div class="col-md-8 col-xs-12 post-cover">
       <%= image_tag(@post.cover.w800_h600_fl_q80) %>
     </div>
-    <div class="col-md-2">
-      <p><%= @post.description(I18n.locale) %></p>
+    <div class="col-md-4 col-xs-12 post-quote">
+      <p><%= @post.description(I18n.locale).truncate(100) %></p>
     </div>
   </div>
-</article>
+  <div class="row mb20">
+    <div class="col-md-8 post-content">
+      <%= raw @post.content(I18n.locale) %>
+    </div>
+    <div class="col-md-4">
+      <div class="post-see-more">
+        <div class="post-see-more-header"><%= t('view.post.see_more')%></div>
+        <div class="post-see-more-posts">
+          <% @posts[0..6].each do |post| %>
+          <div class="home-recommended-post">
+            <div class="row">
+              <div class="col-sm-4">
+                <%= image_tag(post.cover.w160_h120_fl_q80, class: 'img-responsive') %>
+              </div>
+              <div class="col-sm-8">
+                <h3><%= link_to post.title(I18n.locale), post %></h3>
+                <div class="time-ago">1 week ago</div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
