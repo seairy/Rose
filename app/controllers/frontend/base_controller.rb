@@ -10,7 +10,7 @@ class Frontend::BaseController < ApplicationController
     end
 
     def default_url_options options = {}
-      { :locale => I18n.locale }
+      { locale: I18n.locale }
     end
 
     def find_categories

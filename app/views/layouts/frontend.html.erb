@@ -32,13 +32,8 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-10 pull-right language">
+          <div class="col-sm-10 pull-right title">
             <h1><%= t('view.home.title') %></h1>
-            <% if I18n.locale == :en %>
-            <%= link_to image_tag('frontend/flag_cn.png', class: 'img-responsive'), url_for(locale: :zh) %>
-            <% else %>
-            <%= link_to image_tag('frontend/flag_en.png', class: 'img-responsive'), url_for(locale: :en) %>
-            <% end %>
           </div>
         </div>
       </div>
@@ -59,6 +54,13 @@
             <li><%= link_to category.name(I18n.locale), '#' %></li>
             <% end %>
           </ul>
+          <p class="nav navbar-text navbar-right">
+            <% if I18n.locale == :en %>
+            <%= link_to image_tag('frontend/flag_cn.png', class: 'img-responsive'), url_for(locale: :zh) %>
+            <% else %>
+            <%= link_to image_tag('frontend/flag_en.png', class: 'img-responsive'), url_for(locale: :en) %>
+            <% end %>
+          </p>
         </div>
       </div>
     </nav>
@@ -82,7 +84,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <p class="text-center">© 2014, 2015 SPARKLE BRITAIN LTD. ALL RIGHTS RESERVED.</p>
+            <p class="text-center">© 2015 SPARKLE BRITAIN LTD. ALL RIGHTS RESERVED.</p>
             <% if I18n.locale == :en %>
             <%= image_tag('frontend/copyright_en.png', class: 'img-responsive center-block') %>
             <% else %>
