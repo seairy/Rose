@@ -7,12 +7,26 @@ header.wrap {
   padding: 20px 0;
   width: 100%;
   background: asset-url("frontend/header_bg.jpg");
-  .meta {
-    color: #fff;
+  .search {
+    margin-top: 28px;
+    input {
+      padding: 4px 8px;
+      border: 1px #ccc solid;
+      background-color: #eee;
+    }
+  }
+  .subscribe {
+    margin-top: 28px;
+    input {
+      padding: 4px 8px;
+      border: 1px #ccc solid;
+      background-color: #eee;
+    }
   }
   .title {
     h1 {
       float: right;
+      margin: 14px 0 14px;
       font-size: 48px;
       color: #fff;
     }
@@ -30,6 +44,7 @@ nav.wrap {
 }
 
 .navbar {
+  margin-bottom: 0;
   border: 0;
   border-color: transparent;
   background: transparent;
@@ -50,9 +65,15 @@ nav.wrap {
 }
 
 .navbar-right {
+  margin-top: 10px;
+  margin-bottom: 10px;
   img {
-    height: 20px;
+    height: 28px;
   }
+}
+
+.home-main {
+  margin-top: 20px;
 }
 
 .home-popular {
@@ -65,8 +86,11 @@ nav.wrap {
   }
   ul.home-popular-posts {
     padding: 10px;
-    background-color: #ececea;
     li {
+      span.home-popular-category {
+        font-family: $heading_font;
+        color: #888;
+      }
       a {
         font-family: $heading_font;
         font-size: 12px;
@@ -124,20 +148,28 @@ nav.wrap {
   }
   div.home-recommended-posts {
     padding: 10px;
-    background-color: #ececea;
     div.home-recommended-post {
-      margin-bottom: 16px;
+      margin-bottom: 11px;
       h3 {
         margin: 0 0 6px;
+        line-height: 20px;
+        span.home-recommended-category {
+          font-family: $heading_font;
+          font-size: 16px;
+          color: #888;
+        }
         a {
           font-family: $heading_font;
           font-size: 16px;
-          font-weight: bold;
           color: #11023f;
         }
       }
-      .time-ago {
-        font-size: 10px;
+      .home-recommended-quote {
+        padding: 10px 0 8px;
+        border-bottom: 1px #ddd solid;
+        font-family: $heading_font;
+        font-size: 14px;
+        color: #888;
       }
     }
   }
@@ -185,6 +217,23 @@ footer.wrap-copyright {
   }
 }
 
+.position-wrap {
+  background-color: #dfdfdf;
+  padding: 10px;
+}
+
+h1.post-title {
+  margin-bottom: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 42px;
+}
+
+.post-quote {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #888;
+}
+
 .post-show {
   .post-cover {
     padding-left: 0;
@@ -212,8 +261,7 @@ footer.wrap-copyright {
   }
   div.post-see-more-posts {
     padding: 10px;
-    background-color: #ececea;
-    div.home-recommended-post {
+    div.post-see-more-post {
       margin-bottom: 16px;
       h3 {
         margin: 0 0 6px;
@@ -313,6 +361,13 @@ footer.wrap-copyright {
   .home-popular {
     ul.home-popular-posts {
       height: 529px;
+      li {
+        height: 42px;
+        line-height: 16px;
+        a {
+          font-size: 14px;
+        }
+      }
     }
   }
   .home-ads {

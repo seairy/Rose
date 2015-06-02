@@ -1,19 +1,39 @@
-<div class="container post-show">
+<div class="position-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        home &gt;
+        <%= @post.category.name(I18n.locale) %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h1><%= @post.title(I18n.locale) %></h1>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 class="post-title"><%= @post.title(I18n.locale) %></h1>
     </div>
   </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="post-quote"><%= @post.description(I18n.locale) %></div>
+    </div>
+  </div>
+</div>
+<div class="container post-show">
   <div class="row mb20">
+    <div class="col-md-2"></div>
     <div class="col-md-8 col-xs-12 post-cover">
-      <%= image_tag(@post.cover.w800_h600_fl_q80) %>
-    </div>
-    <div class="col-md-4 col-xs-12 post-quote">
-      <p><%= @post.description(I18n.locale).truncate(100) %></p>
+      <%= image_tag(@post.cover.w1800_h1350_fl_q80, class: 'img-responsive') %>
     </div>
   </div>
   <div class="row mb20">
-    <div class="col-md-8 post-content">
+    <div class="col-md-2"></div>
+    <div class="col-md-6 post-content">
       <%= raw @post.content(I18n.locale) %>
     </div>
     <div class="col-md-4">
