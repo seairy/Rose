@@ -72,12 +72,8 @@ nav.wrap {
   }
 }
 
-.home-main {
-  margin-top: 20px;
-}
-
 .home-popular {
-  div.home-popular-header {
+  .home-popular-header {
     padding: 8px 12px;
     background: asset-url("frontend/nav_bg.jpg");
     font-family: $heading_font;
@@ -138,37 +134,62 @@ nav.wrap {
   }
 }
 
-.home-recommended {
-  div.home-recommended-header {
+.category-post {
+  min-height: 370px;
+  article {
+    img {
+      max-width: 100%;
+      margin: 0 0 6px;
+    }
+    .category {
+      a {
+        font-size: 14px;
+        font-weight: bold;
+        color: $primary_color;
+      }
+    }
+    .title {
+      margin: 0 0 6px;
+      a {
+        font-family: $normal_font;
+        font-size: 16px;
+        font-weight: bold;
+        color: $primary_color;
+      }
+    }
+    .description {
+      font-family: $normal_font;
+      font-size: 14px;
+    }
+  }
+}
+
+.quote-list {
+  .quote-list-header {
     padding: 8px 12px;
     background: asset-url("frontend/nav_bg.jpg");
     font-family: $heading_font;
     font-size: 16px;
     color: #273075;
   }
-  div.home-recommended-posts {
+  .quote-list-posts {
     padding: 10px;
-    div.home-recommended-post {
+    .quote-list-post {
       margin-bottom: 11px;
       h3 {
-        margin: 0 0 6px;
         line-height: 20px;
-        span.home-recommended-category {
+        span.quote-list-category {
           font-family: $heading_font;
-          font-size: 16px;
           color: #888;
         }
         a {
           font-family: $heading_font;
-          font-size: 16px;
           color: #11023f;
         }
       }
-      .home-recommended-quote {
-        padding: 10px 0 8px;
+      .quote-list-quote {
         border-bottom: 1px #ddd solid;
         font-family: $heading_font;
-        font-size: 14px;
         color: #888;
       }
     }
@@ -192,7 +213,7 @@ footer.wrap-related {
   padding: 10px;
   width: 100%;
   border-top: 1px #c9c9c9 solid;
-  background-color: #dfdfdf;
+  background: asset-url("frontend/footer_bg.jpg");
   a {
     font-family: $footing_font;
     font-size: 12px;
@@ -252,16 +273,16 @@ h1.post-title {
 }
 
 .post-see-more {
-  div.post-see-more-header {
+  .post-see-more-header {
     padding: 8px 12px;
     background: asset-url("frontend/nav_bg.jpg");
     font-family: $heading_font;
     font-size: 16px;
     color: #273075;
   }
-  div.post-see-more-posts {
+  .post-see-more-posts {
     padding: 10px;
-    div.post-see-more-post {
+    .post-see-more-post {
       margin-bottom: 16px;
       h3 {
         margin: 0 0 6px;
@@ -283,6 +304,10 @@ h1.post-title {
   margin-bottom: 20px;
 }
 
+.mt20 {
+  margin-top: 20px;
+}
+
 @media (min-width: 768px) { 
   div[class^="col"] {
     padding-left: 5px;
@@ -291,6 +316,29 @@ h1.post-title {
   .row {
     margin-left: -5px;
     margin-right: -5px;
+  }
+  .home-popular {
+    display: none;
+  }
+  .quote-list {
+    .quote-list-posts {
+      .quote-list-post {
+        margin-bottom: 11px;
+        h3 {
+          margin: 0 0 2px;
+          line-height: 18px;
+          span.quote-list-category {
+            font-size: 14px;
+          }
+          a {
+            font-size: 14px;
+          }
+        }
+        .quote-list-quote {
+          display: none;
+        }
+      }
+    }
   }
   .post-show {
     .post-cover {
@@ -318,9 +366,14 @@ h1.post-title {
     min-width: 86px;
   }
   .home-popular {
+    display: block;
     ul.home-popular-posts {
       height: 430px;
+      line-height: 16px;
       li {
+        span.home-popular-category {
+          font-size: 12px;
+        }
         a {
           font-size: 10px;
         }
@@ -330,6 +383,29 @@ h1.post-title {
   .home-ads {
     .home-ad {
       height: 147px;
+    }
+  }
+  .quote-list {
+    .quote-list-posts {
+      .quote-list-post {
+        margin-bottom: 11px;
+        h3 {
+          margin: 0 0 2px;
+          line-height: 18px;
+          span.quote-list-category {
+            font-size: 14px;
+          }
+          a {
+            font-size: 14px;
+          }
+        }
+        .quote-list-quote {
+          display: block;
+          padding: 6px 0 8px;
+          height: 59px;
+          font-size: 10px;
+        }
+      }
     }
   }
   .post-show {
@@ -359,11 +435,15 @@ h1.post-title {
     min-width: 100px;
   }
   .home-popular {
+    display: block;
     ul.home-popular-posts {
       height: 529px;
       li {
         height: 42px;
         line-height: 16px;
+        span.home-popular-category {
+          font-size: 16px;
+        }
         a {
           font-size: 14px;
         }
@@ -373,6 +453,29 @@ h1.post-title {
   .home-ads {
     .home-ad {
       height: 180px;
+    }
+  }
+  .quote-list {
+    .quote-list-posts {
+      .quote-list-post {
+        margin-bottom: 11px;
+        h3 {
+          margin: 0 0 6px;
+          line-height: 20px;
+          span.quote-list-category {
+            font-size: 16px;
+          }
+          a {
+            font-size: 16px;
+          }
+        }
+        .quote-list-quote {
+          display: block;
+          padding: 6px 0 8px;
+          height: 79px;
+          font-size: 14px;
+        }
+      }
     }
   }
   .post-show {

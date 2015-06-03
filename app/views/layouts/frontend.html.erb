@@ -52,7 +52,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <% @categories.each do |category| %>
-            <li><%= link_to category.name(I18n.locale), '#' %></li>
+            <li><%= link_to category.name(I18n.locale), category %></li>
             <% end %>
           </ul>
           <p class="nav navbar-text navbar-right">

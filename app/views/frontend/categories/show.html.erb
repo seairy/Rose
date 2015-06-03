@@ -1,0 +1,28 @@
+<div class="position-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        home &gt;
+        <%= @category.name(I18n.locale) %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt20">
+  <div class="row">
+    <% @posts[0..23].each do |post| %>
+    <div class="col-sm-4 category-post">
+      <%= render partial: 'post', locals: { post: post } %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<div class="wrap-archive">
+  <div class="container">
+    <div class="row">
+      <% @posts[0..29].each do |post| %>
+      <div class="col-sm-4"><%= link_to post.title(I18n.locale), '#' %></div>
+      <% end %>
+    </div>
+  </div>
+</div>

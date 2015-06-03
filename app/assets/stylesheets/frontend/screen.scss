@@ -102,7 +102,7 @@ body {
 .home-posts .home-post .category a:hover {
   color: #110a3e;
 }
-.home-recommended {
+.quote-list {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -113,62 +113,62 @@ body {
   margin-bottom: 10px;
 }
 @media (min-width: 768px) {
-  .home-recommended {
+  .quote-list {
     float: left;
     width: 33.33333333%;
   }
 }
-.home-recommended .header {
+.quote-list .header {
   background-color: #110a3e;
   padding: 10px 15px;
 }
-.home-recommended .header h2 {
+.quote-list .header h2 {
   color: white;
   margin: 0px;
   font-weight: bold;
   font-size: 16px;
   font-family: "Oswald", "Open Sans", Helvetica, Arial, sans-serif;
 }
-.home-recommended .content {
+.quote-list .content {
   background-color: #e9e9e9;
   color: #333333;
   padding: 20px 30px 22px;
   margin-bottom: 0px;
 }
-.home-recommended .content .home-recommended-post {
+.quote-list .content .quote-list-post {
   margin-bottom: 10px;
 }
-.home-recommended .content .home-recommended-post .col-sm-4 {
+.quote-list .content .quote-list-post .col-sm-4 {
   padding: 0px;
 }
-.home-recommended .content .home-recommended-post .image img {
+.quote-list .content .quote-list-post .image img {
   max-width: 100%;
   height: auto;
 }
-.home-recommended .content .home-recommended-post .text h3 {
+.quote-list .content .quote-list-post .text h3 {
   font-size: 16px;
   font-weight: bold;
   margin: 0px 0px 8px 0px;
   font-family: "Oswald", "Open Sans", Helvetica, Arial, sans-serif;
 }
-.home-recommended .content .home-recommended-post .text h3 a:link,
-.home-recommended .content .home-recommended-post .text h3 a:active,
-.home-recommended .content .home-recommended-post .text h3 a:visited,
-.home-recommended .content .home-recommended-post .text h3 a:hover {
+.quote-list .content .quote-list-post .text h3 a:link,
+.quote-list .content .quote-list-post .text h3 a:active,
+.quote-list .content .quote-list-post .text h3 a:visited,
+.quote-list .content .quote-list-post .text h3 a:hover {
   color: #110a3e;
 }
-.home-recommended .content .home-recommended-post .text .meta {
+.quote-list .content .quote-list-post .text .meta {
   font-size: 10px;
   font-weight: bold;
 }
-.home-recommended .content .home-recommended-post .text .meta img {
+.quote-list .content .quote-list-post .text .meta img {
   display: inline-block;
 }
-.home-recommended .content .home-recommended-post .text .meta .share-count {
+.quote-list .content .quote-list-post .text .meta .share-count {
   font-size: 10px;
   font-weight: normal;
 }
-.home-recommended .content .home-recommended-post .text .meta .timeago {
+.quote-list .content .quote-list-post .text .meta .timeago {
   font-size: 10px;
   font-weight: normal;
 }
@@ -873,34 +873,34 @@ and open the template in the editor.
   color: #333333;
   padding: 20px 30px;
 }
-.sparkle-post .col-related-posts .content .home-recommended-post {
+.sparkle-post .col-related-posts .content .quote-list-post {
   margin-bottom: 20px;
 }
-.sparkle-post .col-related-posts .content .home-recommended-post .col-md-4 {
+.sparkle-post .col-related-posts .content .quote-list-post .col-md-4 {
   padding: 0px;
 }
-.sparkle-post .col-related-posts .content .home-recommended-post .image img {
+.sparkle-post .col-related-posts .content .quote-list-post .image img {
   max-width: 100%;
   height: auto;
 }
-.sparkle-post .col-related-posts .content .home-recommended-post .text h3 {
+.sparkle-post .col-related-posts .content .quote-list-post .text h3 {
   font-size: 16px;
   font-weight: bold;
   margin: 0px 0px 8px 0px;
   font-family: "Oswald", "Open Sans", Helvetica, Arial, sans-serif;
 }
-.sparkle-post .col-related-posts .content .home-recommended-post .text .meta {
+.sparkle-post .col-related-posts .content .quote-list-post .text .meta {
   font-size: 10px;
   font-weight: bold;
 }
-.sparkle-post .col-related-posts .content .home-recommended-post .text .meta img {
+.sparkle-post .col-related-posts .content .quote-list-post .text .meta img {
   display: inline-block;
 }
-.sparkle-post .col-related-posts .content .home-recommended-post .text .meta .share-count {
+.sparkle-post .col-related-posts .content .quote-list-post .text .meta .share-count {
   font-size: 10px;
   font-weight: normal;
 }
-.sparkle-post .col-related-posts .content .home-recommended-post .text .meta .timeago {
+.sparkle-post .col-related-posts .content .quote-list-post .text .meta .timeago {
   font-size: 10px;
   font-weight: normal;
 }
@@ -1015,7 +1015,7 @@ and open the template in the editor.
     Created on : Jul 28, 2014, 1:34:11 PM
     Author     : gary
 */
-  .home-recommended .content .home-recommended-post .text .meta {
+  .quote-list .content .quote-list-post .text .meta {
     display: none;
   }
   .sparkle-post .category-image-row .pull-quote {
@@ -1054,11 +1054,11 @@ and open the template in the editor.
   .sparkle-post .col-related-posts .header h2 {
     text-align: center;
   }
-  .sparkle-post .col-related-posts .content .home-recommended-post .image img {
+  .sparkle-post .col-related-posts .content .quote-list-post .image img {
     margin: 0px auto;
     display: block;
   }
-  .sparkle-post .col-related-posts .content .home-recommended-post .text {
+  .sparkle-post .col-related-posts .content .quote-list-post .text {
     margin-top: 6px;
     padding-left: 0px;
     padding-right: 0px;
@@ -1100,7 +1100,7 @@ and open the template in the editor.
   .secondary-navigation .search-form form .input-group .input-group-btn {
     width: 7%;
   }
-  .home-recommended {
+  .quote-list {
     display: none;
   }
   .sparkle-post .category-image-row .pull-quote {
@@ -1162,7 +1162,7 @@ and open the template in the editor.
   .sparkle-post .col-related-posts .content:after {
     clear: both;
   }
-  .sparkle-post .col-related-posts .content .home-recommended-post {
+  .sparkle-post .col-related-posts .content .quote-list-post {
     float: left;
     width: 45%;
     margin-left: 0px !important;

@@ -1,4 +1,4 @@
-<div class="container home-main">
+<div class="container mt20">
   <div class="row">
     <div class="col-md-2">
       <div class="home-popular">
@@ -67,18 +67,18 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="home-recommended">
-        <div class="home-recommended-header"><%= t('view.home.recommended')%></div>
-        <div class="home-recommended-posts">
+      <div class="quote-list">
+        <div class="quote-list-header"><%= t('view.home.recommended')%></div>
+        <div class="quote-list-posts">
           <% @posts[0..7].each do |post| %>
-          <div class="home-recommended-post">
+          <div class="quote-list-post">
             <div class="row">
               <div class="col-sm-6">
                 <%= image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive') %>
               </div>
               <div class="col-sm-6">
-                <h3><span class="home-recommended-category"><%= post.category.name(I18n.locale) %>:</span> <%= link_to post.title(I18n.locale), post %></h3>
-                <div class="home-recommended-quote"><%= post.description(I18n.locale).truncate(80) %></div>
+                <h3><span class="quote-list-category"><%= post.category.name(I18n.locale) %>:</span> <%= link_to post.title(I18n.locale), post %></h3>
+                <div class="quote-list-quote"><%= post.description(I18n.locale).truncate(80) %></div>
               </div>
             </div>
           </div>

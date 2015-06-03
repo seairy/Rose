@@ -37,18 +37,18 @@
       <%= raw @post.content(I18n.locale) %>
     </div>
     <div class="col-md-4">
-      <div class="post-see-more">
-        <div class="post-see-more-header"><%= t('view.post.see_more')%></div>
-        <div class="post-see-more-posts">
+      <div class="quote-list">
+        <div class="quote-list-header"><%= t('view.post.see_more')%></div>
+        <div class="quote-list-posts">
           <% @posts[0..6].each do |post| %>
-          <div class="home-recommended-post">
+          <div class="quote-list-post">
             <div class="row">
-              <div class="col-sm-4">
-                <%= image_tag(post.cover.w160_h120_fl_q80, class: 'img-responsive') %>
+              <div class="col-sm-6">
+                <%= image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive') %>
               </div>
-              <div class="col-sm-8">
-                <h3><%= link_to post.title(I18n.locale), post %></h3>
-                <div class="time-ago">1 week ago</div>
+              <div class="col-sm-6">
+                <h3><span class="quote-list-category"><%= post.category.name(I18n.locale) %>:</span> <%= link_to post.title(I18n.locale), post %></h3>
+                <div class="quote-list-quote"><%= post.description(I18n.locale).truncate(80) %></div>
               </div>
             </div>
           </div>
