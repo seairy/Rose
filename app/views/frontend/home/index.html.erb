@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        home
+        <%= image_tag('frontend/logo.png', class: 'logo') %>
       </div>
     </div>
   </div>
@@ -51,8 +51,12 @@
       </div>
     </div>
     <div class="col-md-2 home-ads">
-      <div class="home-ad"></div>
-      <div class="home-ad"></div>
+      <div class="home-ad">
+        <%= image_tag('frontend/shortcut_1.jpg', class: 'img-responsive') %>
+      </div>
+      <div class="home-ad">
+        <%= image_tag('frontend/shortcut_2.jpg', class: 'img-responsive') %>
+      </div>
       <div class="home-ad"></div>
     </div>
   </div>
@@ -107,8 +111,15 @@
 <div class="wrap-archive">
   <div class="container">
     <div class="row">
-      <% @posts[0..29].each do |post| %>
-      <div class="col-sm-4"><%= link_to post.title(I18n.locale), '#' %></div>
+      <% @posts[0..14].each_with_index do |post, i| %>
+      <div class="col-sm-4">
+        <div class="archive-post">
+          <div class="row">
+            <div class="col-sm-1"><span class="number"><%= i + 1 %></span></div>
+            <div class="col-sm-11 archive-post-title"><%= link_to post.title(I18n.locale), '#' %></div>
+          </div>
+        </div>
+      </div>
       <% end %>
     </div>
   </div>

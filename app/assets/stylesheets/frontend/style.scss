@@ -197,15 +197,23 @@ nav.wrap {
 }
 
 div.wrap-archive {
-  padding: 20px 0;
+  padding: 10px 0;
   width: 100%;
   background-color: #f2f2f2;
-  a {
-    font-family: $footing_font;
-    font-size: 12px;
-    font-weight: bold;
-    color: $primary_color;
-    text-transform: uppercase;
+  .archive-post {
+    span.number {
+      line-height: 28px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 28px;
+      color: #ccc;
+    }
+    a {
+      font-family: $footing_font;
+      font-size: 14px;
+      font-weight: bold;
+      color: $primary_color;
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -213,7 +221,7 @@ footer.wrap-related {
   padding: 10px;
   width: 100%;
   border-top: 1px #c9c9c9 solid;
-  background: asset-url("frontend/footer_bg.jpg");
+  background: asset-url("frontend/nav_bg.jpg");
   a {
     font-family: $footing_font;
     font-size: 12px;
@@ -227,6 +235,7 @@ footer.wrap-copyright {
   padding: 10px 0 40px;
   width: 100%;
   border-top: 1px #c9c9c9 solid;
+  background: asset-url("frontend/header_bg.jpg");
   p {
     font-family: $heading_font;
     font-size: 12px;
@@ -241,6 +250,10 @@ footer.wrap-copyright {
 .position-wrap {
   background-color: #dfdfdf;
   padding: 10px;
+  img.logo {
+    padding: 0;
+    width: 60px;
+  }
 }
 
 h1.post-title {
@@ -488,6 +501,14 @@ h1.post-title {
       padding: 20px 40px;
       height: 575px;
       font-size: 34px;
+    }
+  }
+  div.wrap-archive {
+    .archive-post {
+      height: 32px;
+      .archive-post-title {
+        padding-left: 10px;
+      }
     }
   }
 }
