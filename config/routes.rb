@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   get '', to: redirect('/en')
   scope "/:locale", locale: /en|zh/, module: :frontend do
     root 'home#index'
-    get 'new_home', to: 'frontend/home#index_new'
     resources :categories
     resources :posts
+    get 'experts', to: 'contents#experts', as: :experts
   end
   namespace :cms do
     root 'dashboard#index'

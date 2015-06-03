@@ -1,0 +1,30 @@
+<div class="position-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= image_tag('frontend/logo.png', class: 'logo') %>
+        experts
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container experts mt40">
+  <div class="row">
+    <% 12.times do %>
+    <div class="col-md-6">
+      <div class="experts-person">
+        <div class="row">
+          <div class="col-md-4">
+            <%= image_tag('frontend/experts/01.jpg', class: 'portrait') %>
+          </div>
+          <div class="col-md-6">
+            <p class="experts-person-name">大卫·派思</p>
+            <p class="experts-person-name">David Price</p>
+            <p>大卫离开了牛津城和象牙 塔,开始了25年的记者 生涯,他为《泰晤士报》 、BBC等主流媒体撰稿,是 英国文化、科技、音乐和汽 车等多方面领域的专家。他 曾在香港和东京工作生活, 现定居英格兰的威尔特郡。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
