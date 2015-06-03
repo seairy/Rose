@@ -1,0 +1,37 @@
+<div class="position-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= image_tag('frontend/logo.png', class: 'logo') %>
+        contact
+      </div>
+    </div>
+  </div>
+</div>
+<div class="contact-wrap">
+  <div class="container pt40">
+    <%= form_tag do %>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 contact-item">
+          <label>name</label>
+          <%= text_field_tag 'contact' %>
+        </div>
+        <div class="col-md-4 col-md-offset-4 contact-item">
+          <label>email</label>
+          <%= text_field_tag 'contact' %>
+        </div>
+        <div class="col-md-4 col-md-offset-4 contact-item">
+          <label>subject</label>
+          <%= text_field_tag 'contact' %>
+        </div>
+        <div class="col-md-4 col-md-offset-4 contact-item">
+          <label>message</label>
+          <%= text_area_tag 'contact', nil, row: 10 %>
+        </div>
+        <div class="col-md-4 col-md-offset-4 contact-action">
+          <%= submit_tag 'Submit' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

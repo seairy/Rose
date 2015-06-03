@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :posts
     get 'experts', to: 'contents#experts', as: :experts
+    get 'contact', to: 'contents#contact', as: :contact
   end
   namespace :cms do
     root 'dashboard#index'

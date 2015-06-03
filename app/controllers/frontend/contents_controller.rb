@@ -2,4 +2,7 @@
 class Frontend::ContentsController < Frontend::BaseController
   def experts
   end
+
+  def contact
+  end
 end

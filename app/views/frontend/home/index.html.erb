@@ -26,10 +26,13 @@
             <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
             <li data-target="#home-carousel" data-slide-to="1"></li>
             <li data-target="#home-carousel" data-slide-to="2"></li>
-            <li data-target="#home-carousel" data-slide-to="2"></li>
+            <li data-target="#home-carousel" data-slide-to="3"></li>
+            <li data-target="#home-carousel" data-slide-to="4"></li>
+            <li data-target="#home-carousel" data-slide-to="5"></li>
+            <li data-target="#home-carousel" data-slide-to="6"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
-            <% @posts[0..3].each_with_index do |post, i| %>
+            <% @posts[0..6].each_with_index do |post, i| %>
             <div class="item<%= ' active' if i.zero? %>">
               <%= image_tag(post.cover.w800_h600_fl_q80) %>
               <div class="carousel-caption">

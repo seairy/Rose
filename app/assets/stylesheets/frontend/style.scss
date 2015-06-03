@@ -6,7 +6,8 @@ $primary_color: #110a3e;
 header.wrap {
   padding: 20px 0;
   width: 100%;
-  background: asset-url("frontend/header_bg.jpg");
+  background: asset-url("frontend/header_bg@2x.jpg");
+  background-size: 1920px 200px;
   .search {
     margin-top: 28px;
     input {
@@ -28,7 +29,7 @@ header.wrap {
       float: right;
       margin: 14px 0 14px;
       font-size: 48px;
-      color: #fff;
+      color: #001140;
     }
   }
 }
@@ -54,7 +55,7 @@ nav.wrap {
       text-align: center;
       a {
         font-family: $heading_font;
-        font-size: 16px;
+        font-size: 18px;
         color: #273075;
         &:hover {
           background-color: #000;
@@ -135,7 +136,7 @@ nav.wrap {
 }
 
 .category-post {
-  min-height: 370px;
+  min-height: 390px;
   article {
     img {
       max-width: 100%;
@@ -196,16 +197,55 @@ nav.wrap {
   }
 }
 
-.experts {
+.experts-wrap {
+  width: 100%;
+  background-color: #f3f0e7;
   .experts-person {
     margin-bottom: 40px;
     img.portrait {
       width: 160px;
     }
-    .experts-person-name {
+    .experts-person-zh-name {
+      margin: 20px 0 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #666;
+    }
+    .experts-person-en-name {
+      margin: 0;
       font-size: 18px;
       font-weight: bold;
       color: #11023f;
+    }
+  }
+}
+
+.contact-wrap {
+  width: 100%;
+  background-color: #f3f0e7;
+  .contact-item {
+    margin-bottom: 20px;
+    label {
+      display: block;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      color: #333;
+    }
+    input {
+      width: 330px;
+      height: 32px;
+    }
+    textarea {
+      width: 330px;
+      height: 280px;
+    }
+  }
+  .contact-action {
+    margin-bottom: 20px;
+    input {
+      padding: 4px 8px;
+      border: 1px #ccc solid;
+      background-color: #eee;
     }
   }
 }
@@ -336,6 +376,10 @@ h1.post-title {
 
 .mt40 {
   margin-top: 40px;
+}
+
+.pt40 {
+  padding-top: 40px;
 }
 
 @media (min-width: 768px) { 
