@@ -3,7 +3,7 @@
   font-family: 'Abel';
   font-style: normal;
   font-weight: 400;
-  src: local('Abel'), local('Abel-Regular'), url(http://fonts.gstatic.com/s/abel/v6/UzN-iejR1VoXU2Oc-7LsbvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  src: local('Abel'), local('Abel-Regular'), url(/fonts/UzN-iejR1VoXU2Oc-7LsbvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin */
@@ -11,7 +11,7 @@
   font-family: 'Alfa Slab One';
   font-style: normal;
   font-weight: 400;
-  src: local('Alfa Slab One'), local('AlfaSlabOne-Regular'), url(http://fonts.gstatic.com/s/alfaslabone/v5/Qx6FPcitRwTC_k88tLPc-QYWpCd0FFfjqwFBDnEN0bM.woff2) format('woff2');
+  src: local('Alfa Slab One'), local('AlfaSlabOne-Regular'), url(/fonts/Qx6FPcitRwTC_k88tLPc-QYWpCd0FFfjqwFBDnEN0bM.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin-ext */
@@ -19,7 +19,7 @@
   font-family: 'Gentium Book Basic';
   font-style: normal;
   font-weight: 400;
-  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(http://fonts.gstatic.com/s/gentiumbookbasic/v6/IRFxB2matTxrjZt6a3FUnszm0DvNGU8YAOZV-OC8gkD3rGVtsTkPsbDajuO5ueQw.woff2) format('woff2');
+  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(/fonts/IRFxB2matTxrjZt6a3FUnszm0DvNGU8YAOZV-OC8gkD3rGVtsTkPsbDajuO5ueQw.woff2) format('woff2');
   unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -27,7 +27,7 @@
   font-family: 'Gentium Book Basic';
   font-style: normal;
   font-weight: 400;
-  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(http://fonts.gstatic.com/s/gentiumbookbasic/v6/IRFxB2matTxrjZt6a3FUnjHxYFfSxJ-QC83SOBxk38Y.woff2) format('woff2');
+  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(/fonts/IRFxB2matTxrjZt6a3FUnjHxYFfSxJ-QC83SOBxk38Y.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin-ext */
@@ -35,7 +35,7 @@
   font-family: 'Gentium Book Basic';
   font-style: normal;
   font-weight: 700;
-  src: local('Gentium Book Basic Bold'), local('GentiumBookBasic-Bold'), url(http://fonts.gstatic.com/s/gentiumbookbasic/v6/T2vUYmWzlqUtgLYdlemGnUYwQaCV_6HbQ_AX11UCu1-Axg1Bnw5F8n5M1Q3pc3xZ.woff2) format('woff2');
+  src: local('Gentium Book Basic Bold'), local('GentiumBookBasic-Bold'), url(/fonts/T2vUYmWzlqUtgLYdlemGnUYwQaCV_6HbQ_AX11UCu1-Axg1Bnw5F8n5M1Q3pc3xZ.woff2) format('woff2');
   unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -43,7 +43,7 @@
   font-family: 'Gentium Book Basic';
   font-style: normal;
   font-weight: 700;
-  src: local('Gentium Book Basic Bold'), local('GentiumBookBasic-Bold'), url(http://fonts.gstatic.com/s/gentiumbookbasic/v6/T2vUYmWzlqUtgLYdlemGnV7BxqaxiHjt2ue4T9OK6I6glnMp3_3A8V8Ai8YosRtX.woff2) format('woff2');
+  src: local('Gentium Book Basic Bold'), local('GentiumBookBasic-Bold'), url(/fonts/T2vUYmWzlqUtgLYdlemGnV7BxqaxiHjt2ue4T9OK6I6glnMp3_3A8V8Ai8YosRtX.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin-ext */
@@ -51,7 +51,7 @@
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://fonts.gstatic.com/s/oswald/v10/Qw6_9HvXRQGg5mMbFR3Phn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(/fonts/Qw6_9HvXRQGg5mMbFR3Phn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
   unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -59,7 +59,7 @@
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://fonts.gstatic.com/s/oswald/v10/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(/fonts/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin-ext */
@@ -67,7 +67,7 @@
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
-  src: local('Oswald Bold'), local('Oswald-Bold'), url(http://fonts.gstatic.com/s/oswald/v10/dI-qzxlKVQA6TUC5RKSb34X0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  src: local('Oswald Bold'), local('Oswald-Bold'), url(/fonts/dI-qzxlKVQA6TUC5RKSb34X0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
   unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -75,6 +75,6 @@
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
-  src: local('Oswald Bold'), local('Oswald-Bold'), url(http://fonts.gstatic.com/s/oswald/v10/bH7276GfdCjMjApa_dkG6ZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+  src: local('Oswald Bold'), local('Oswald-Bold'), url(/fonts/bH7276GfdCjMjApa_dkG6ZBw1xU1rKptJj_0jans920.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
