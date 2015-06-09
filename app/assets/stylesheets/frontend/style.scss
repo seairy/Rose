@@ -1,6 +1,7 @@
 $heading_font: 'Oswald', 'Open Sans', Helvetica, Arial, sans-serif;
 $normal_font: 'Gentium Book Basic', 'Open Sans', Helvetica, Arial, sans-serif;
 $footing_font: 'Abel', 'Open Sans', Helvetica, Arial, sans-serif;
+$lg_font: 'LeagueGothic-Regular', Helvetica, Arial, sans-serif;
 $primary_color: #110a3e;
 
 header.wrap {
@@ -130,8 +131,8 @@ nav.wrap {
     .title {
       margin: 0 0 6px;
       a {
-        font-family: $normal_font;
-        font-size: 16px;
+        font-family: $lg_font;
+        font-size: 20px;
         font-weight: bold;
         color: $primary_color;
       }
