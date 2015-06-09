@@ -14,7 +14,7 @@
       <div class="home-popular">
         <div class="home-popular-header"><%= t('view.category.popular') %> <%= @category.name(I18n.locale) %></div>
         <ul class="home-popular-posts">
-          <% @posts[12..23].each do |post| %>
+          <% @posts[0..12].each do |post| %>
           <li><%= link_to post.title(I18n.locale), post %></li>
           <% end %>
         </ul>
@@ -30,7 +30,7 @@
             <li data-target="#home-carousel" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
-            <% @posts[4..6].each_with_index do |post, i| %>
+            <% @posts[0..3].each_with_index do |post, i| %>
             <div class="item<%= ' active' if i.zero? %>">
               <%= image_tag(post.cover.w800_h600_fl_q80) %>
               <div class="carousel-caption">

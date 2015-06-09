@@ -2,6 +2,6 @@
 class Frontend::CategoriesController < Frontend::BaseController
   def show
     @category = Category.find(params[:id])
-    @posts = Post.all
+    @posts = @category.posts.published
   end
 end
