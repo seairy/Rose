@@ -24,9 +24,9 @@
     <header class="wrap">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <div class="row">
-              <div class="col-sm-4 search">
+              <div class="col-sm-6 search">
                 <input type="text" placeholder="search..." />
               </div>
               <div class="col-sm-2 subscribe">
@@ -34,8 +34,9 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 pull-right title">
-            <h1><%= t('view.home.title') %></h1>
+          <div class="col-sm-4 title">
+            <h1 class="text-center"><%= t('view.home.title') %></h1>
+            <p class="sub text-center"><%= t('view.home.subtitle') %></p>
           </div>
         </div>
       </div>
@@ -81,6 +82,9 @@
           </div>
         </div>
       </div>
+    </footer>
+    <footer class="wrap-mirror">
+      <%= image_tag 'frontend/laomao.png', class: 'center-block' %>
     </footer>
     <footer class="wrap-copyright">
       <div class="container">
