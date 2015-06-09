@@ -2,6 +2,6 @@
 class Frontend::PostsController < Frontend::BaseController
   def show
     @post = Post.find(params[:id])
-    @posts = Post.all
+    @posts = Post.published
   end
 end
