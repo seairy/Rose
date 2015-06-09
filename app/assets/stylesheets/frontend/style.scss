@@ -205,6 +205,22 @@ nav.wrap {
   }
 }
 
+.home-search {
+  background-color: #000b41;
+  input {
+    border: none;
+    background-color: #ddd;
+  }
+}
+
+.home-subscribe {
+  background: asset-url("frontend/header_bg.jpg");
+  input {
+    border: none;
+    background-color: #fff;
+  }
+}
+
 .experts-wrap {
   width: 100%;
   background-color: #f3f0e7;
@@ -380,6 +396,10 @@ h1.post-title {
   }
 }
 
+.mb10 {
+  margin-bottom: 10px;
+}
+
 .mb20 {
   margin-bottom: 20px;
 }
@@ -394,6 +414,10 @@ h1.post-title {
 
 .pt40 {
   padding-top: 40px;
+}
+
+.clear {
+  clear: both;
 }
 
 @media (min-width: 768px) { 
@@ -564,6 +588,44 @@ h1.post-title {
           font-size: 14px;
         }
       }
+    }
+  }
+  .home-search {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    height: 74px;
+    span {
+      float: left;
+      margin-top: 20px;
+      font-family: $lg_font;
+      font-size: 26px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    input {
+      float: left;
+      margin: 20px 0 0 10px;
+      width: 240px;
+      line-height: 32px;
+    }
+  }
+  .home-subscribe {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    height: 100px;
+    span {
+      float: left;
+      margin-top: 32px;
+      font-family: $lg_font;
+      font-size: 26px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    input {
+      float: left;
+      margin: 32px 0 0 10px;
+      width: 217px;
+      line-height: 32px;
     }
   }
   .post-show {

@@ -106,7 +106,39 @@
     </div>
   </div>
   <div class="row">
-    <% @posts[9..23].each do |post| %>
+    <div class="col-sm-8">
+      <div class="row">
+        <% @posts[9..12].each do |post| %>
+        <div class="col-sm-6 home-post">
+          <%= render partial: 'post', locals: { post: post } %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="home-search">
+        <span>search</span>
+        <input type="text" />
+        <div class="clear"></div>
+      </div>
+      <div class="home-subscribe">
+        <span>subscribe</span>
+        <input type="text" />
+        <div class="clear"></div>
+      </div>
+      <div class="home-gallery">
+        <div class="row">
+          <% @posts[24..31].each do |post| %>
+          <div class="col-sm-6">
+            <div class="home-gallery-photograph mb10"><%= image_tag post.cover.w400_h300_fl_q80, class: 'img-responsive' %></div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% @posts[13..24].each do |post| %>
     <div class="col-sm-4 home-post">
       <%= render partial: 'post', locals: { post: post } %>
     </div>
