@@ -277,6 +277,7 @@ nav.wrap {
 div.wrap-archive {
   padding: 10px 0;
   width: 100%;
+  border-top: 1px #c9c9c9 solid;
   background-color: #f2f2f2;
   .archive-post {
     span.number {
@@ -318,7 +319,7 @@ footer.wrap-mirror {
 }
 
 footer.wrap-copyright {
-  padding: 10px 0 30px;
+  padding: 10px 0 16px;
   width: 100%;
   p {
     font-family: $heading_font;
@@ -336,6 +337,11 @@ footer.wrap-copyright {
   img.logo {
     padding: 0;
     width: 60px;
+  }
+  a {
+    font-family: $lg_font;
+    font-size: 20px;
+    color: #930005;
   }
 }
 
