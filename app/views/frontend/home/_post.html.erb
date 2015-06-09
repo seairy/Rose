@@ -2,5 +2,5 @@
   <%= link_to image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive'), post %>
   <div class="category"><%= link_to post.category.name(I18n.locale), '#' %></div>
   <h3 class="title"><%= link_to post.title(I18n.locale), post %></h3>
-  <div class="description"><%= post.home_description(I18n.locale).try(:truncate, 100) %></div>
+  <div class="description"><%= sanitize(post.content(I18n.locale), tags: %w(span em)).try(:truncate, 100) %></div>
 </article>

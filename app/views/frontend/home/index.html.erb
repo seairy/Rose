@@ -7,14 +7,14 @@
     </div>
   </div>
 </div>
-<div class="container mt20">
+<div class="container">
   <div class="row">
     <div class="col-md-2">
       <div class="home-popular">
         <div class="home-popular-header"><%= t('view.home.popular') %></div>
         <ul class="home-popular-posts">
-          <% @posts[0..11].each do |post| %>
-          <li><span class="home-popular-category"><%= post.category.name(I18n.locale) %>:</span> <%= link_to post.title(I18n.locale), post %></li>
+          <% @posts[0..13].each_with_index do |post, i| %>
+          <li<%= raw(' class="last"') if i == 13 %>><%= link_to post.title(I18n.locale), post %></li>
           <% end %>
         </ul>
       </div>
@@ -116,7 +116,7 @@
 <div class="wrap-archive">
   <div class="container">
     <div class="row">
-      <% @posts[0..14].each_with_index do |post, i| %>
+      <% @posts[0..23].each_with_index do |post, i| %>
       <div class="col-sm-4">
         <div class="archive-post">
           <div class="row">

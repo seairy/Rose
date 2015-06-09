@@ -4,13 +4,13 @@ $footing_font: 'Abel', 'Open Sans', Helvetica, Arial, sans-serif;
 $primary_color: #110a3e;
 
 header.wrap {
-  padding: 20px 0;
+  padding: 10px 0;
   border-top: 1px #000 solid;
   width: 100%;
   background: asset-url("frontend/header_bg@2x.jpg");
   background-size: 1920px 200px;
   .search {
-    margin-top: 28px;
+    margin-top: 36px;
     input {
       padding: 4px 8px;
       border: 1px #ccc solid;
@@ -18,7 +18,7 @@ header.wrap {
     }
   }
   .subscribe {
-    margin-top: 28px;
+    margin-top: 36px;
     input {
       padding: 4px 8px;
       border: 1px #ccc solid;
@@ -63,6 +63,7 @@ nav.wrap {
         font-family: $heading_font;
         font-size: 18px;
         color: #273075;
+        text-transform: uppercase;
         &:hover {
           background-color: #000;
         }
@@ -88,16 +89,17 @@ nav.wrap {
     color: #273075;
   }
   ul.home-popular-posts {
-    padding: 10px;
+    padding: 0 10px;
+    list-style: none;
     li {
-      span.home-popular-category {
-        font-family: $heading_font;
-        color: #888;
-      }
+      border-bottom: 1px #ddd solid;
       a {
         font-family: $heading_font;
         font-size: 12px;
         font-weight: normal;
+      }
+      &.last {
+        border-bottom: none;
       }
     }
   }
@@ -281,7 +283,7 @@ footer.wrap-related {
   padding: 10px;
   width: 100%;
   border-top: 1px #c9c9c9 solid;
-  background: asset-url("frontend/nav_bg.jpg");
+  background-color: #ddd;
   a {
     font-family: $footing_font;
     font-size: 12px;
@@ -292,10 +294,10 @@ footer.wrap-related {
 }
 
 footer.wrap-mirror {
-  padding-top: 55px;
+  padding-top: 35px;
   border-bottom: 1px #000 solid;
   width: 100%;
-  height: 145px;
+  height: 125px;
   background: asset-url("frontend/header_bg.jpg");
 }
 
@@ -314,7 +316,6 @@ footer.wrap-copyright {
 }
 
 .position-wrap {
-  background-color: #dfdfdf;
   padding: 10px;
   img.logo {
     padding: 0;
@@ -526,8 +527,8 @@ h1.post-title {
     ul.home-popular-posts {
       height: 529px;
       li {
-        height: 42px;
-        line-height: 16px;
+        height: 38px;
+        line-height: 38px;
         span.home-popular-category {
           font-size: 16px;
         }
