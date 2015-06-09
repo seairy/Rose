@@ -12,7 +12,17 @@ Rails.application.routes.draw do
     root 'dashboard#index'
     get 'dashboard', to: 'dashboard#index', as: :dashboard
     resources :categories
-    resources :posts
+    resources :posts do
+      collection do
+        get :draft
+        get :published
+        get :trashed
+      end
+      member do
+        delete :trash
+      end
+    end
+    resources :experts
     resources :administrators
     resource :profile do
       get 'edit_password'

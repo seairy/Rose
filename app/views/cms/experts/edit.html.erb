@@ -1,0 +1,57 @@
+<div class="pageheader">
+  <h2><i class="fa fa-pencil-square-o"></i> Expert <span>edit</span></h2>
+</div>
+<div class="contentpanel">
+  <%= render "cms/commons/error_messages", target: @expert %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">Expert</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_for [:cms, @expert], html: { class: 'form-horizontal form-bordered' } do |f| %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.portrait' %></label>
+          <div class="col-sm-6">
+            <%= f.file_field :portrait, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.en_name' %></label>
+          <div class="col-sm-6">
+            <%= f.text_field :en_name, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.zh_name' %></label>
+          <div class="col-sm-6">
+            <%= f.text_field :zh_name, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.en_description' %></label>
+          <div class="col-sm-6">
+            <%= f.text_area :en_description, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.zh_description' %></label>
+          <div class="col-sm-6">
+            <%= f.text_area :zh_description, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.position' %></label>
+          <div class="col-sm-6">
+            <%= f.text_field :position, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12 text-center">
+            <%= f.submit 'Submit', class: 'btn btn-primary' %>&nbsp;
+            <%= link_to 'Return', cms_experts_path, class: 'btn btn-default' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

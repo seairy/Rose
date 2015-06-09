@@ -1,0 +1,56 @@
+<div class="pageheader">
+  <h2><i class="fa fa-file-text-o"></i> Expert <span>show</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">Expert</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_tag nil, class: 'form-horizontal form-bordered' do %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.portrait' %></label>
+          <div class="col-sm-6">
+            <%= image_tag @expert.portrait.w255_h340_fl_q80, class: 'img-responsive' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.en_title' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @expert.en_name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.zh_title' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @expert.zh_name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.en_description' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @expert.en_description, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.zh_description' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @expert.zh_description, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'expert.position' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @expert.position, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to 'Return', cms_experts_path, class: 'btn btn-default' %>&nbsp;
+      <%= link_to 'Edit', edit_cms_expert_path(@expert), class: 'btn btn-primary' %>&nbsp;
+      <%= link_to 'Delete', [:cms, @expert], method: :delete, data: { confirm: '确定要删除吗？' }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

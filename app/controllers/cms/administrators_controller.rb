@@ -28,7 +28,7 @@ class Cms::AdministratorsController < Cms::BaseController
   
   def update
     @administrator = Administrator.find(params[:id])
-    if @administrator.update_attributes(administrator_params)
+    if @administrator.update(administrator_params)
       redirect_to [:cms, @administrator], notice: '更新成功！'
     else
       render action: 'edit'

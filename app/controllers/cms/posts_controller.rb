@@ -1,12 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Cms::PostsController < Cms::BaseController
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :trash]
   
   def index
-    @posts = Post.page(params[:page])
+    @posts = Post.order(published_at: :desc).page(params[:page]).per(40)
   end
   
   def show
-    @post = Post.find(params[:id])
   end
   
   def new
@@ -14,35 +14,54 @@ class Cms::PostsController < Cms::BaseController
   end
   
   def edit
-    @post = Post.find(params[:id])
   end
   
   def create
     @post = Post.new(post_params)
+    @post.published_at = convert_picker_to_datetime(post_params[:published_at_date], post_params[:published_at_time])
     if @post.save
-      redirect_to [:cms, @post], notice: '创建成功！'
+      redirect_to [:cms, @post], notice: 'Post was successfully created.'
     else
       render action: 'new'
     end
   end
   
   def update
-    @post = Post.find(params[:id])
-    if @post.update_attributes(post_params)
-      redirect_to [:cms, @post], notice: '更新成功！'
+    @post.published_at = convert_picker_to_datetime(post_params[:published_at_date], post_params[:published_at_time])
+    if @post.update(post_params)
+      redirect_to [:cms, @post], notice: 'Post was successfully updated.'
     else
       render action: 'edit'
     end
   end
   
   def destroy
-    @post = Post.find(params[:id])
-    @post.trash
-    redirect_to cms_posts_path, notice: '删除成功！'
+    redirect_to cms_posts_path, notice: 'Post was successfully destroyed.'
   end
 
-  protected
-  def post_params
-    params.require(:post).permit!
+  def draft
+    @posts = Post.draft.order(published_at: :desc).page(params[:page]).per(40)
   end
+
+  def published
+    @posts = Post.published.order(published_at: :desc).page(params[:page]).per(40)
+  end
+
+  def trashed
+    @posts = Post.trashed.order(published_at: :desc).page(params[:page]).per(40)
+  end
+
+  def trash
+    @post.trash!
+    redirect_to draft_cms_posts_path(page: params[:page]), notice: 'Post was successfully trashed.'
+  end
+
+  private
+    def set_post
+      @post = Post.find(params[:id])
+    end
+
+    def post_params
+      params.require(:post).permit!
+    end
 end

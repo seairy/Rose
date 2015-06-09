@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-Administrator.create!(account: 'admin', password: '123456', password_confirmation: '123456', name: 'Administrator', available: true)
+Administrator.create!(account: 'admin', password: '123456', password_confirmation: '123456', name: 'David Price', available: true)
 Category.create!([
   { en_name: 'people', zh_name: '人物', permalink: 'people', position: 1, visible: true },
   { en_name: 'places', zh_name: '地方', permalink: 'places', position: 2, visible: true },

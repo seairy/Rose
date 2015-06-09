@@ -1,58 +1,108 @@
 <div class="pageheader">
-  <h2><i class="fa fa-pencil-square-o"></i> 球会管理 <span>编辑</span></h2>
+  <h2><i class="fa fa-pencil-square-o"></i> Post <span>edit</span></h2>
 </div>
 <div class="contentpanel">
-  <%= render "cms/commons/error_messages", target: @venue %>
+  <%= render "cms/commons/error_messages", target: @post %>
   <div class="panel panel-dark">
     <div class="panel-heading">
-      <h4 class="panel-title">球会信息</h4>
+      <h4 class="panel-title">Post</h4>
     </div>
     <div class="panel-body panel-body-nopadding">
-      <%= form_for [:cms, @venue], html: { class: 'form-horizontal form-bordered' } do |f| %>
+      <%= form_for [:cms, @post], html: { class: 'form-horizontal form-bordered' } do |f| %>
         <div class="form-group">
-          <label class="col-sm-3 control-label"><%= brac_t 'venue.city' %></label>
+          <label class="col-sm-3 control-label"><%= brac_t 'post.category' %></label>
           <div class="col-sm-6">
-            <%= f.grouped_collection_select :city_id, Province.all, :cities, :name, :id, :name, class: 'form-control' %>
+            <%= f.collection_select :category_id, Category.all, :id, :en_name, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-3 control-label"><%= brac_t 'venue.name' %></label>
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_title' %></label>
           <div class="col-sm-6">
-            <%= f.text_field :name, class: 'form-control' %>
+            <%= f.text_field :en_title, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-3 control-label"><%= brac_t 'venue.address' %></label>
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_title' %></label>
           <div class="col-sm-6">
-            <%= f.text_field :address, class: 'form-control' %>
+            <%= f.text_field :zh_title, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-3 control-label"><%= brac_t 'venue.position' %></label>
-          <div class="col-sm-3">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.permalink' %></label>
+          <div class="col-sm-6">
             <div class="input-group">
-              <span class="input-group-addon"><%= brac_t 'venue.lng' %></span>
-              <%= f.text_field :longitude, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="input-group">
-              <span class="input-group-addon"><%= brac_t 'venue.lat' %></span>
-              <%= f.text_field :latitude, class: 'form-control' %>
+              <span class="input-group-addon">http://uklaomao.com/</span>
+              <%= f.text_field :permalink, class: 'form-control' %>
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-3 control-label"><%= brac_t 'venue.description' %></label>
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_home_description' %></label>
           <div class="col-sm-6">
-            <%= f.text_area :description, class: 'form-control' %>
+            <%= f.text_area :en_home_description, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_home_description' %></label>
+          <div class="col-sm-6">
+            <%= f.text_area :zh_home_description, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_description' %></label>
+          <div class="col-sm-6">
+            <%= f.text_area :en_description, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_description' %></label>
+          <div class="col-sm-6">
+            <%= f.text_area :zh_description, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_pull_quote' %></label>
+          <div class="col-sm-6">
+            <%= f.text_area :en_pull_quote, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_pull_quote' %></label>
+          <div class="col-sm-6">
+            <%= f.text_area :zh_pull_quote, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_content' %></label>
+          <div class="col-sm-8">
+             <%= f.cktext_area :en_content, cols: 40 %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_content' %></label>
+          <div class="col-sm-8">
+             <%= f.cktext_area :zh_content, cols: 40 %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.published_at_date' %></label>
+          <div class="col-sm-3">
+            <div class="input-group">
+              <%= f.text_field :published_at_date, value: brac_date(@post.published_at), class: 'form-control' %>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="input-group">
+              <div class="bootstrap-timepicker"><%= f.text_field :published_at_time, value: brac_time(@post.published_at), class: 'form-control' %></div>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            </div>
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-12 text-center">
-            <%= f.submit '提交', class: 'btn btn-primary' %>&nbsp;
-            <%= link_to '返回球会信息', [:cms, @venue], class: 'btn btn-default' %>&nbsp;
-            <%= link_to '返回球会列表', cms_venues_path, class: 'btn btn-default' %>
+            <%= f.submit 'Submit', class: 'btn btn-primary' %>&nbsp;
+            <%= link_to 'Return', cms_posts_path, class: 'btn btn-default' %>
           </div>
         </div>
       <% end %>
@@ -62,8 +112,9 @@
 <% content_for :javascript do %>
   <script>
     jQuery(document).ready(function(){
-      $('#venue_city_id').chosen({'width': '100%', 'white-space': 'nowrap'});
-      $('#venue_description').autosize();
+      $('#post_category_id').chosen({'width': '100%', 'white-space': 'nowrap'});
+      $('#post_published_at_date').datepicker({dateFormat: 'yy-mm-dd'});
+      $('#post_published_at_time').timepicker({defaultTIme: false, showMeridian: false, minuteStep: 5});
     });
   </script>
 <% end %>

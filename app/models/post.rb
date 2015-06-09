@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   include AASM, Multilingual
+  attr_accessor :published_at_date
+  attr_accessor :published_at_time
   belongs_to :category
   mount_uploader :cover, PostCoverUploader
   aasm column: 'state' do
@@ -14,4 +16,5 @@ class Post < ActiveRecord::Base
     end
   end
   multilingual :title, :home_description, :description, :content
+  scope :draft, -> { where(state: :draft) }
 end

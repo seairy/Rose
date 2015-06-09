@@ -10,15 +10,87 @@
     <div class="panel-body panel-body-nopadding">
       <%= form_tag nil, class: 'form-horizontal form-bordered' do %>
         <div class="form-group">
-          <label class="col-sm-3 control-label"><%= brac_t 'post.name' %></label>
+          <label class="col-sm-3 control-label"><%= brac_t 'post.category' %></label>
           <div class="col-sm-6">
-            <%= text_field_tag nil, @post.title, readonly: true, class: 'form-control' %>
+            <%= text_field_tag nil, @post.category.name, readonly: true, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-3 control-label"><%= brac_t 'post.description' %></label>
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_title' %></label>
           <div class="col-sm-6">
-            <%= text_area_tag :description, @post.content, readonly: true, rows: 8, class: 'form-control' %>
+            <%= text_field_tag nil, @post.en_title, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_title' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @post.zh_title, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.permalink' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, "http://uklaomao.com/#{@post.permalink}", readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_home_description' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @post.en_home_description, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_home_description' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @post.zh_home_description, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_description' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @post.en_description, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_description' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @post.zh_description, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_pull_quote' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @post.en_pull_quote, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_pull_quote' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @post.zh_pull_quote, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.en_content' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @post.content, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.zh_content' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @post.content, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.state' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @post.state, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.published_at' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, brac_datetime(@post.published_at), readonly: true, class: 'form-control' %>
           </div>
         </div>
       <% end %>

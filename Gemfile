@@ -8,7 +8,6 @@ gem 'jquery-rails', '~> 4.0.3'
 gem 'turbolinks', '~> 2.5.3'
 gem 'mysql2', '~> 0.3.17'
 gem 'kaminari', '~> 0.16.2'
-gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'aasm', '~> 4.0.8'
 gem 'simple_enum', '~> 2.1.1'
 gem 'ruby-pinyin', '~> 0.4.5'
@@ -32,6 +31,7 @@ group :development, :test do
   gem 'capistrano-rails', '~> 1.1.2'
   gem 'capistrano-rvm', '~> 0.1.2'
   gem 'thin', '~> 1.6.3'
+  gem 'sequel', '~> 4.18.0'
 end
 
 group :test do

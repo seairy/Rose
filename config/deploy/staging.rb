@@ -7,5 +7,5 @@ set :deploy_user, 'deploy'
 
 server '123.57.157.161', user: 'deploy', roles: %w{web app db}
 
-set :deploy_to, "/srv/www/Rose"
+set :deploy_to, "/srv/www/RoseStaging"
 set :rails_env, :production

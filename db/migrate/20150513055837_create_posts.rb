@@ -7,8 +7,10 @@ class CreatePosts < ActiveRecord::Migration
       t.string :cover, limit: 100
       t.text :en_home_description, :zh_home_description, limit: 2000
       t.text :en_description, :zh_description, limit: 2000
+      t.text :en_pull_quote, :zh_pull_quote, limit: 2000
       t.text :en_content, :zh_content, limit: 30000
       t.string :state, limit: 50, null: false
+      t.datetime :published_at, null: false
       t.timestamps null: false
     end
   end

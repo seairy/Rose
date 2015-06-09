@@ -53,6 +53,9 @@
  */
 
 
+
+
+
 /********** 1. FILE IMPORTS **********/
 /*************************************/
 
@@ -155,7 +158,7 @@ strong {
 
 .searchform input {
     width: 250px;
-    background: #fff asset-url('cms/icon-search.png') no-repeat 95% center;
+    background: #fff asset-url("cms/icon-search.png") no-repeat 95% center;
     float: left;
     padding: 18px 20px;
     border: 0;
@@ -564,7 +567,7 @@ strong {
 }
 
 .nav-bracket > li.nav-parent > a {
-    background: transparent asset-url('cms/plus-white.png') no-repeat 92% center; 
+    background: transparent asset-url("cms/plus-white.png") no-repeat 92% center; 
 }
 
 .nav-bracket > li.nav-parent > a:focus {
@@ -579,12 +582,12 @@ strong {
 .nav-bracket > li.nav-parent > a:active {
     color: #1d2939;
     background-color: #fff;
-    background-image: asset-url('cms/plus.png');
+    background-image: asset-url("cms/plus.png");
 }
 
 .nav-bracket > li.nav-active > a {
     background-color: #fff;
-    background-image: asset-url('cms/minus.png');
+    background-image: asset-url("cms/minus.png");
     color: #1d2939;
     -moz-box-shadow: 0 3px 0 rgba(0,0,0,0.2);
     -webkit-box-shadow: 0 3px 0 rgba(0,0,0,0.2);
@@ -592,7 +595,7 @@ strong {
 }
 
 .nav-bracket > li.nav-active > a:hover {
-    background-image: asset-url('cms/minus.png');
+    background-image: asset-url("cms/minus.png");
     background-repeat: no-repeat;
 }
 
@@ -614,15 +617,15 @@ strong {
 }
 
 .nav-bracket > li.nav-parent.active > a {
-    background-image: asset-url('cms/plus.png'); 
+    background-image: asset-url("cms/plus.png"); 
 }
 
 .nav-bracket > li.nav-active.active > a {
-    background-image: asset-url('cms/minus.png'); 
+    background-image: asset-url("cms/minus.png"); 
 }
 
 .nav-bracket > li.nav-active.active > a:hover {
-    background-image: asset-url('cms/minus.png'); 
+    background-image: asset-url("cms/minus.png"); 
 }
 
 .nav-bracket li .fa,
@@ -878,16 +881,17 @@ form .form-group:last-child {
 }
 
 .subtitle {
-    font-size: 16px;
+    font-size: 13px;
+    text-transform: uppercase;
     color: #333;
-    font-weight: bold;
+    font-family: 'LatoBold';
     margin-bottom: 15px;
     margin-top: 0;
 }
 
 .subtitle-lined {
     border-bottom: 1px dotted #ddd;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
 }
 
 p {
@@ -1983,10 +1987,6 @@ div.error label.error:before {
     margin-right: 0;
 }
 
-.table-paginate {
-    text-align: right;
-}
-
 .table-primary thead tr th {
     background-color: #428BCA;
 }
@@ -2623,7 +2623,7 @@ div.error label.error:before {
 
 
 .panel-blog .blog-img img {
-    width: 100%;  
+    width: 100%;    
 }
 
 .blogsingle-title {
@@ -3192,11 +3192,11 @@ div.error label.error:before {
 }
 
 .signinpanel .uname {
-    background: #fff asset-url('cms/user.png') no-repeat 95% center; 
+    background: #fff asset-url("cms/user.png") no-repeat 95% center; 
 }
 
 .signinpanel .pword {
-    background: #fff asset-url('cms/locked.png') no-repeat 95% center; 
+    background: #fff asset-url("cms/locked.png") no-repeat 95% center; 
 }
 
 .signinpanel .btn {
