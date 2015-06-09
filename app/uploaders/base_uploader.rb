@@ -25,7 +25,7 @@ class BaseUploader < CarrierWave::Uploader::Base
   end
 
   def store_dir
-    '/'
+    'assets'
   end
 
   def filename

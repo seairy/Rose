@@ -1,4 +1,5 @@
 class Expert < ActiveRecord::Base
-  include Positionable
+  include Multilingual, Positionable
   mount_uploader :portrait, ExpertPortraitUploader
+  multilingual :description
 end
