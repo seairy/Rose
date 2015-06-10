@@ -37,6 +37,12 @@
           </div>
         </div>
         <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.cover' %></label>
+          <div class="col-sm-6">
+            <%= f.file_field :cover, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
           <label class="col-sm-3 control-label"><%= brac_t 'post.en_home_description' %></label>
           <div class="col-sm-6">
             <%= f.text_area :en_home_description, class: 'form-control' %>

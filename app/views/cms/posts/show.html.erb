@@ -34,6 +34,12 @@
           </div>
         </div>
         <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.cover' %></label>
+          <div class="col-sm-6">
+            <%= image_tag @post.cover.w800_h600_fl_q80, class: 'img-responsive' %>
+          </div>
+        </div>
+        <div class="form-group">
           <label class="col-sm-3 control-label"><%= brac_t 'post.en_home_description' %></label>
           <div class="col-sm-6">
             <%= text_area_tag :nil, @post.en_home_description, readonly: true, rows: 8, class: 'form-control' %>

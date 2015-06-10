@@ -87,7 +87,13 @@
               </div>
               <div class="col-sm-6">
                 <h3><span class="quote-list-category"><%= post.category.name(I18n.locale) %>:</span> <%= link_to post.title(I18n.locale), post %></h3>
-                <div class="quote-list-quote"><%= post.description(I18n.locale).try(:truncate, 80) %></div>
+                <div class="quote-list-quote">
+                  <% if locale_en? %>
+                  <%= post.en_description.try(:truncate, 80) %>
+                  <% else %>
+                  <%= post.zh_description.try(:truncate, 36) %>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
