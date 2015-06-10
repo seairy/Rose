@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Cms::PostsController < Cms::BaseController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :trash]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :trash]
   
   def index
     @posts = Post.order(published_at: :desc).page(params[:page]).per(40)
@@ -49,6 +49,11 @@ class Cms::PostsController < Cms::BaseController
 
   def trashed
     @posts = Post.trashed.order(published_at: :desc).page(params[:page]).per(40)
+  end
+
+  def publish
+    @post.publish!
+    redirect_to [:cms, @post], notice: 'Post was successfully published.'
   end
 
   def trash

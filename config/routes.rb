@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         get :trashed
       end
       member do
+        put :publish
         delete :trash
       end
     end
