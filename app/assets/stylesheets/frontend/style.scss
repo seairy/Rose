@@ -115,7 +115,6 @@ nav.wrap {
 }
 
 .home-post {
-  min-height: 390px;
   article {
     img {
       max-width: 100%;
@@ -185,12 +184,12 @@ nav.wrap {
     padding: 10px;
     .quote-list-post {
       margin-bottom: 11px;
+      .quote-list-category {
+        font-family: $heading_font;
+        color: #888;
+      }
       h3 {
         line-height: 20px;
-        span.quote-list-category {
-          font-family: $heading_font;
-          color: #888;
-        }
         a {
           font-family: $heading_font;
           color: #11023f;
@@ -207,7 +206,14 @@ nav.wrap {
 
 .home-search {
   background-color: #000b41;
+  span {
+    float: left;
+    font-family: $lg_font;
+    color: #fff;
+    text-transform: uppercase;
+  }
   input {
+    float: left;
     border: none;
     background-color: #ddd;
   }
@@ -215,7 +221,14 @@ nav.wrap {
 
 .home-subscribe {
   background: asset-url("frontend/header_bg.jpg");
+  span {
+    float: left;
+    font-family: $lg_font;
+    color: #fff;
+    text-transform: uppercase;
+  }
   input {
+    float: left;
     border: none;
     background-color: #fff;
   }
@@ -442,12 +455,12 @@ h1.post-title {
     .quote-list-posts {
       .quote-list-post {
         margin-bottom: 11px;
+        .quote-list-category {
+          font-size: 14px;
+        }
         h3 {
           margin: 0 0 2px;
           line-height: 18px;
-          span.quote-list-category {
-            font-size: 14px;
-          }
           a {
             font-size: 14px;
           }
@@ -487,7 +500,7 @@ h1.post-title {
     display: block;
     ul.home-popular-posts {
       height: 430px;
-      line-height: 16px;
+      line-height: 28px;
       li {
         span.home-popular-category {
           font-size: 12px;
@@ -507,24 +520,56 @@ h1.post-title {
     .quote-list-posts {
       .quote-list-post {
         margin-bottom: 11px;
+        .quote-list-category {
+          font-size: 14px;
+        }
         h3 {
-          margin: 0 0 2px;
-          line-height: 18px;
-          span.quote-list-category {
-            font-size: 14px;
-          }
+          margin-bottom: 10px;
+          height: 20px;
+          line-height: 20px;
           a {
             font-size: 14px;
           }
         }
         .quote-list-quote {
           display: block;
-          padding: 6px 0 8px;
-          height: 59px;
+          padding: 6px 0 4px;
+          height: 53px;
           font-size: 10px;
         }
       }
     }
+  }
+  .home-search {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    height: 74px;
+    span {
+      margin-top: 20px;
+      font-size: 26px;
+    }
+    input {
+      margin: 20px 0 0 10px;
+      width: 180px;
+      line-height: 32px;
+    }
+  }
+  .home-subscribe {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    height: 100px;
+    span {
+      margin-top: 32px;
+      font-size: 26px;
+    }
+    input {
+      margin: 32px 0 0 10px;
+      width: 157px;
+      line-height: 32px;
+    }
+  }
+  .home-post {
+    min-height: 360px;
   }
   .post-show {
     .post-cover {
@@ -577,13 +622,13 @@ h1.post-title {
     .quote-list-posts {
       .quote-list-post {
         margin-bottom: 11px;
+        .quote-list-category {
+          font-size: 14px;
+        }
         h3 {
-          margin-bottom: 18px;
-          height: 40px;
+          margin-bottom: 15px;
+          height: 24px;
           line-height: 20px;
-          span.quote-list-category {
-            font-size: 16px;
-          }
           a {
             font-size: 16px;
           }
@@ -602,15 +647,10 @@ h1.post-title {
     padding-left: 22px;
     height: 74px;
     span {
-      float: left;
       margin-top: 20px;
-      font-family: $lg_font;
       font-size: 26px;
-      color: #fff;
-      text-transform: uppercase;
     }
     input {
-      float: left;
       margin: 20px 0 0 10px;
       width: 240px;
       line-height: 32px;
@@ -621,19 +661,17 @@ h1.post-title {
     padding-left: 22px;
     height: 100px;
     span {
-      float: left;
       margin-top: 32px;
-      font-family: $lg_font;
       font-size: 26px;
-      color: #fff;
-      text-transform: uppercase;
     }
     input {
-      float: left;
       margin: 32px 0 0 10px;
       width: 217px;
       line-height: 32px;
     }
+  }
+  .home-post {
+    min-height: 390px;
   }
   .post-show {
     .post-cover {
