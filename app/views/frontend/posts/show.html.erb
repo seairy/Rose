@@ -48,3 +48,10 @@
     </div>
   </div>
 </div>
+<% content_for :javascript do %>
+  <script>
+    jQuery(document).ready(function(){
+      $(".post-content img").addClass("img-responsive");
+    });
+  </script>
+<% end %>
