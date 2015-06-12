@@ -67,7 +67,7 @@
     </div>
     <div class="col-sm-4">
       <div class="quote-list">
-        <div class="quote-list-header"><%= t('view.category.recommended')%></div>
+        <div class="quote-list-header"><%= t('view.category.recommended')%> <%= @category.name(I18n.locale) %></div>
         <div class="quote-list-posts">
           <% @posts[0..7].each do |post| %>
           <div class="quote-list-post">
