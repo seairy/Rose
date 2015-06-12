@@ -364,7 +364,8 @@ h1.post-title {
 
 .post-quote {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-family: $lg_font;
+  font-size: 22px;
   color: #888;
 }
 
@@ -372,12 +373,6 @@ h1.post-title {
   .post-cover {
     padding-left: 0;
     padding-right: 0;
-  }
-  .post-quote {
-    padding-left: 0;
-    padding-right: 0;
-    background-color: #e5e4ea;
-    font-family: 'Alfa Slab One', 'Open Sans', Helvetica, Arial, sans-serif;
   }
   .post-content {
     font-family: $normal_font;
