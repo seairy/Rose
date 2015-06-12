@@ -21,9 +21,10 @@
             <li data-target="#home-carousel" data-slide-to="4"></li>
             <li data-target="#home-carousel" data-slide-to="5"></li>
             <li data-target="#home-carousel" data-slide-to="6"></li>
+            <li data-target="#home-carousel" data-slide-to="7"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
-            <% @posts[0..6].each_with_index do |post, i| %>
+            <% @carousel_posts.each_with_index do |post, i| %>
             <div class="item<%= ' active' if i.zero? %>">
               <%= image_tag(post.cover.w800_h600_fl_q80) %>
               <div class="carousel-caption">
@@ -79,7 +80,7 @@
       <div class="quote-list">
         <div class="quote-list-header"><%= t('view.home.recommended')%></div>
         <div class="quote-list-posts">
-          <% @posts[0..7].each do |post| %>
+          <% @recommended_posts.each do |post| %>
           <div class="quote-list-post">
             <div class="row">
               <div class="col-sm-6">

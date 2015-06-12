@@ -17,4 +17,6 @@ class Post < ActiveRecord::Base
   end
   multilingual :title, :home_description, :description, :content
   scope :search, ->(keyword) { where("en_title LIKE '%#{keyword}%' OR zh_title LIKE '%#{keyword}%'") }
+  scope :displayed_in_carousel, -> { where(displayed_in_carousel: true) }
+  scope :displayed_in_recommended, -> { where(displayed_in_recommended: true) }
 end
