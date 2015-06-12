@@ -16,5 +16,5 @@ class Post < ActiveRecord::Base
     end
   end
   multilingual :title, :home_description, :description, :content
-  scope :draft, -> { where(state: :draft) }
+  scope :search, ->(keyword) { where("en_title LIKE '%#{keyword}%' OR zh_title LIKE '%#{keyword}%'") }
 end

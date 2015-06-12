@@ -18,9 +18,13 @@
             <li data-target="#home-carousel" data-slide-to="1"></li>
             <li data-target="#home-carousel" data-slide-to="2"></li>
             <li data-target="#home-carousel" data-slide-to="3"></li>
+            <li data-target="#home-carousel" data-slide-to="4"></li>
+            <li data-target="#home-carousel" data-slide-to="5"></li>
+            <li data-target="#home-carousel" data-slide-to="6"></li>
+            <li data-target="#home-carousel" data-slide-to="7"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
-            <% @posts[0..3].each_with_index do |post, i| %>
+            <% @carousel_posts.each_with_index do |post, i| %>
             <div class="item<%= ' active' if i.zero? %>">
               <%= image_tag(post.cover.w800_h600_fl_q80) %>
               <div class="carousel-caption">
@@ -45,10 +49,103 @@
 </div>
 <div class="container">
   <div class="row">
-    <% @posts[0..23].each do |post| %>
-    <div class="col-sm-4 category-post">
+    <% @posts[0..2].each do |post| %>
+    <div class="col-sm-4 home-post">
       <%= render partial: 'post', locals: { post: post } %>
     </div>
     <% end %>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        <% @posts[3..8].each do |post| %>
+        <div class="col-sm-6 home-post">
+          <%= render partial: 'post', locals: { post: post } %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="quote-list">
+        <div class="quote-list-header"><%= t('view.category.recommended')%></div>
+        <div class="quote-list-posts">
+          <% @posts[0..7].each do |post| %>
+          <div class="quote-list-post">
+            <div class="row">
+              <div class="col-sm-6">
+                <%= image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive') %>
+              </div>
+              <div class="col-sm-6">
+                <div class="quote-list-category"><%= post.category.name(I18n.locale) %>:</div>
+                <h3><%= link_to post.title(I18n.locale), post %></h3>
+                <div class="quote-list-quote">
+                  <% if locale_en? %>
+                  <%= post.en_description.try(:truncate, 80) %>
+                  <% else %>
+                  <%= post.zh_description.try(:truncate, 36) %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        <% @posts[9..12].try(:each) do |post| %>
+        <div class="col-sm-6 home-post">
+          <%= render partial: 'post', locals: { post: post } %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="home-search">
+        <span>search</span>
+        <input type="text" />
+        <div class="clear"></div>
+      </div>
+      <div class="home-subscribe">
+        <span>subscribe</span>
+        <input type="text" />
+        <div class="clear"></div>
+      </div>
+      <div class="home-gallery">
+        <div class="row">
+          <% @gallary_posts.each do |post| %>
+          <div class="col-sm-6">
+            <div class="home-gallery-photograph mb10"><%= link_to image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive'), post %></div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% @posts[13..24].try(:each) do |post| %>
+    <div class="col-sm-4 home-post">
+      <%= render partial: 'post', locals: { post: post } %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<div class="wrap-archive mt20">
+  <div class="container">
+    <div class="row">
+      <% @archive_posts.each_with_index do |post, i| %>
+      <div class="col-sm-4">
+        <div class="archive-post">
+          <div class="row">
+            <div class="col-sm-1"><span class="number"><%= i + 1 %></span></div>
+            <div class="col-sm-11 archive-post-title"><%= link_to post.title(I18n.locale), post %></div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>

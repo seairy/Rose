@@ -69,6 +69,10 @@
       </div>
       <div class="mainpanel">
         <div class="headerbar">
+          <a class="menutoggle"><i class="fa fa-bars"></i></a>
+          <%= form_tag cms_search_path, method: :get, class: 'searchform' do %>
+            <%= text_field_tag :keyword, nil, placeholder: "Search...", class: 'form-control' %>
+          <% end %>
           <div class="header-right">
             <ul class="headermenu">
               <li>

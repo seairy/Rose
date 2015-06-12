@@ -49,7 +49,7 @@
         <%= image_tag('frontend/shortcut_1.jpg', class: 'img-responsive') %>
       </div>
       <div class="home-ad">
-        <%= image_tag('frontend/shortcut_2.jpg', class: 'img-responsive') %>
+        <%= link_to image_tag('frontend/shortcut_2.jpg', class: 'img-responsive'), '/en/posts/156', target: '_blank' %>
       </div>
       <div class="home-ad">
         <%= image_tag('frontend/shortcut_3.jpg', class: 'img-responsive') %>
@@ -151,7 +151,7 @@
         <div class="archive-post">
           <div class="row">
             <div class="col-sm-1"><span class="number"><%= i + 1 %></span></div>
-            <div class="col-sm-11 archive-post-title"><%= link_to post.title(I18n.locale), '#' %></div>
+            <div class="col-sm-11 archive-post-title"><%= link_to post.title(I18n.locale), post %></div>
           </div>
         </div>
       </div>

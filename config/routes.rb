@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :cms do
     root 'dashboard#index'
     get 'dashboard', to: 'dashboard#index', as: :dashboard
+    get 'search', to: 'searches#show', as: :search
     resources :categories
     resources :posts do
       collection do

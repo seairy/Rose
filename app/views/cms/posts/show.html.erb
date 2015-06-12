@@ -99,6 +99,14 @@
             <%= text_field_tag nil, brac_datetime(@post.published_at), readonly: true, class: 'form-control' %>
           </div>
         </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'post.display_setting' %></label>
+          <div class="col-sm-6 mt5">
+            <%= content_tag :span, brac_t('post.popular'), class: 'label label-primary' if @post.displayed_in_popular? %>
+            <%= content_tag :span, brac_t('post.carousel'), class: 'label label-success' if @post.displayed_in_carousel? %>
+            <%= content_tag :span, brac_t('post.recommended'), class: 'label label-info' if @post.displayed_in_recommended? %>
+          </div>
+        </div>
       <% end %>
     </div>
     <div class="panel-footer">
