@@ -118,7 +118,6 @@
       <div class="home-search">
         <span>search</span>
         <input id="home-search-text" type="text" />
-        <input type="button" value="SUBMIT" />
         <div class="clear"></div>
       </div>
       <div class="home-subscribe">
@@ -143,6 +142,10 @@
       <%= render partial: 'post', locals: { post: post } %>
     </div>
     <% end %>
+  </div>
+  <div class="row">
+    <div class="col-sm-6"><%= link_to_previous_page @posts, image_tag('frontend/prev.png') %></div>
+    <div class="col-sm-6 text-right"><%= link_to_next_page @posts, image_tag('frontend/next.png') %></div>
   </div>
 </div>
 <div class="wrap-archive mt20">
