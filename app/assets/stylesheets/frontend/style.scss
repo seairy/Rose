@@ -128,7 +128,7 @@ nav.wrap {
       }
     }
     .title {
-      margin: 0 0 6px;
+      margin: 0 0 1px;
       a {
         font-family: $lg_font;
         font-size: 24px;
@@ -136,7 +136,8 @@ nav.wrap {
       }
     }
     .description {
-      font-family: $normal_font;
+      font-family: $heading_font;
+      color: #888;
       font-size: 14px;
     }
   }
@@ -198,6 +199,15 @@ nav.wrap {
         font-family: $heading_font;
         color: #888;
       }
+    }
+  }
+}
+
+.home-carousel {
+  .carousel-caption {
+    p {
+      font-family: $heading_font;
+      font-size: 18px;
     }
   }
 }
@@ -696,7 +706,7 @@ h1.post-title {
     }
   }
   .home-post {
-    min-height: 390px;
+    min-height: 394px;
   }
   .category-post {
     min-height: 390px;
