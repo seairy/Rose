@@ -260,7 +260,6 @@ nav.wrap {
       width: 160px;
     }
     .experts-person-zh-name {
-      margin: 20px 0 0;
       font-size: 18px;
       font-weight: bold;
       color: #666;
@@ -270,6 +269,9 @@ nav.wrap {
       font-size: 18px;
       font-weight: bold;
       color: #11023f;
+    }
+    .experts-person-description {
+      font-family: $heading_font;
     }
   }
 }

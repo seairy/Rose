@@ -11,7 +11,7 @@
             <div class="col-md-6">
               <p class="experts-person-zh-name"><%= expert.zh_name %></p>
               <p class="experts-person-en-name"><%= expert.en_name %></p>
-              <p><%= expert.description(I18n.locale).truncate(200) %></p>
+              <p class="experts-person-description"><%= expert.description(I18n.locale) %></p>
             </div>
           </div>
         </div>
