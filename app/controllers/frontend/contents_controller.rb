@@ -4,6 +4,9 @@ class Frontend::ContentsController < Frontend::BaseController
     @experts = Expert.all
   end
 
+  def about
+  end
+
   def contact
   end
 end

@@ -232,6 +232,17 @@ nav.wrap {
   }
 }
 
+.about-wrap {
+  width: 100%;
+  background-color: #f3f0e7;
+  .about-content {
+    padding-right: 0;
+    p {
+      font-family: $heading_font;
+    }
+  }
+}
+
 .experts-wrap {
   width: 100%;
   background-color: #f3f0e7;
@@ -424,8 +435,16 @@ h1.post-title {
   margin-top: 40px;
 }
 
+.pt20 {
+  padding-top: 20px;
+}
+
 .pt40 {
   padding-top: 40px;
+}
+
+.pb20 {
+  padding-bottom: 20px;
 }
 
 .clear {
