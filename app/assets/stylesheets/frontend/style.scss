@@ -238,8 +238,13 @@ nav.wrap {
   .about-content {
     padding-right: 0;
     p {
+      padding: 10px 0;
       font-family: $heading_font;
+      font-size: 15px;
     }
+  }
+  .about-logos {
+    list-style: none;
   }
 }
 
