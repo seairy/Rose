@@ -58,7 +58,7 @@
   <div class="row">
     <div class="col-sm-8">
       <div class="row">
-        <% @posts[3..8].each do |post| %>
+        <% @posts[3..8].try(:each) do |post| %>
         <div class="col-sm-6 home-post">
           <%= render partial: 'post', locals: { post: post } %>
         </div>

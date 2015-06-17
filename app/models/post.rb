@@ -19,4 +19,8 @@ class Post < ActiveRecord::Base
   scope :search, ->(keyword) { where("en_title LIKE '%#{keyword}%' OR zh_title LIKE '%#{keyword}%'") }
   scope :displayed_in_carousel, -> { where(displayed_in_carousel: true) }
   scope :displayed_in_recommended, -> { where(displayed_in_recommended: true) }
+
+  def visit!
+    update!(page_view: self.page_view + 1)
+  end
 end

@@ -4,7 +4,7 @@
       <div class="home-popular">
         <div class="home-popular-header"><%= t('view.home.popular') %></div>
         <ul class="home-popular-posts">
-          <% @posts[0..13].each_with_index do |post, i| %>
+          <% @popular_posts.each_with_index do |post, i| %>
           <li<%= raw(' class="last"') if i == 13 %>><%= link_to post.title(I18n.locale), post %></li>
           <% end %>
         </ul>
@@ -26,11 +26,11 @@
           <div class="carousel-inner" role="listbox">
             <% @carousel_posts.each_with_index do |post, i| %>
             <div class="item<%= ' active' if i.zero? %>">
-              <%= image_tag(post.cover.w800_h600_fl_q80) %>
-              <div class="carousel-caption">
+              <%= link_to image_tag(post.cover.w800_h600_fl_q80), post %>
+              <a href="<%= url_for(post) %>"><div class="carousel-caption">
                 <h3><%= post.title(I18n.locale) %></h3>
                 <p><%= post.home_description(I18n.locale) %></p>
-              </div>
+              </div></a>
             </div>
             <% end %>
           </div>
@@ -137,7 +137,7 @@
     </div>
   </div>
   <div class="row">
-    <% @posts[13..24].each do |post| %>
+    <% @posts[13..24].try(:each) do |post| %>
     <div class="col-sm-4 home-post">
       <%= render partial: 'post', locals: { post: post } %>
     </div>
@@ -151,7 +151,7 @@
 <div class="wrap-archive mt20">
   <div class="container">
     <div class="row">
-      <% @archive_posts.each_with_index do |post, i| %>
+      <% @popular_posts.each_with_index do |post, i| %>
       <div class="col-sm-4">
         <div class="archive-post">
           <div class="row">
