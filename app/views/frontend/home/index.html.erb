@@ -4,7 +4,7 @@
       <div class="home-popular">
         <div class="home-popular-header"><%= t('view.home.popular') %></div>
         <ul class="home-popular-posts">
-          <% @popular_posts.each_with_index do |post, i| %>
+          <% @popular_posts[0..13].each_with_index do |post, i| %>
           <li<%= raw(' class="last"') if i == 13 %>><%= link_to post.title(I18n.locale), post %></li>
           <% end %>
         </ul>
@@ -83,17 +83,17 @@
           <% @recommended_posts.each do |post| %>
           <div class="quote-list-post">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-5">
                 <%= image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive') %>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-7">
                 <div class="quote-list-category"><%= post.category.name(I18n.locale) %>:</div>
                 <h3><%= link_to post.title(I18n.locale), post %></h3>
                 <div class="quote-list-quote">
                   <% if locale_en? %>
-                  <%= post.en_description.try(:truncate, 80) %>
+                  <%= post.en_description.try(:truncate, 100) %>
                   <% else %>
-                  <%= post.zh_description.try(:truncate, 36) %>
+                  <%= post.zh_description.try(:truncate, 48) %>
                   <% end %>
                 </div>
               </div>
