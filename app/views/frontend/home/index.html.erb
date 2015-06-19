@@ -27,10 +27,12 @@
             <% @carousel_posts.each_with_index do |post, i| %>
             <div class="item<%= ' active' if i.zero? %>">
               <%= link_to image_tag(post.cover.w800_h600_fl_q80), post %>
-              <a href="<%= url_for(post) %>"><div class="carousel-caption">
-                <h3><%= post.title(I18n.locale) %></h3>
-                <p><%= post.home_description(I18n.locale) %></p>
-              </div></a>
+              <a href="<%= url_for(post) %>">
+                <div class="carousel-caption">
+                  <h3><%= post.title(I18n.locale) %></h3>
+                  <p><%= post.home_description(I18n.locale) %></p>
+                </div>
+              </a>
             </div>
             <% end %>
           </div>
@@ -107,7 +109,7 @@
   <div class="row">
     <div class="col-sm-8">
       <div class="row">
-        <% @posts[9..12].each do |post| %>
+        <% @posts[9..12].try(:each) do |post| %>
         <div class="col-sm-6 home-post">
           <%= render partial: 'post', locals: { post: post } %>
         </div>

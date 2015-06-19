@@ -4,7 +4,7 @@
       <div class="home-popular">
         <div class="home-popular-header"><%= t('view.category.popular') %> <%= @category.name(I18n.locale) %></div>
         <ul class="home-popular-posts">
-          <% @posts[0..12].each do |post| %>
+          <% @popular_posts[0..13].each do |post| %>
           <li><%= link_to post.title(I18n.locale), post %></li>
           <% end %>
         </ul>
@@ -26,11 +26,13 @@
           <div class="carousel-inner" role="listbox">
             <% @carousel_posts.each_with_index do |post, i| %>
             <div class="item<%= ' active' if i.zero? %>">
-              <%= image_tag(post.cover.w800_h600_fl_q80) %>
-              <div class="carousel-caption">
-                <h3><%= post.title(I18n.locale) %></h3>
-                <p><%= post.home_description(I18n.locale) %></p>
-              </div>
+              <%= link_to image_tag(post.cover.w800_h600_fl_q80), post %>
+              <a href="<%= url_for(post) %>">
+                <div class="carousel-caption">
+                  <h3><%= post.title(I18n.locale) %></h3>
+                  <p><%= post.home_description(I18n.locale) %></p>
+                </div>
+              </a>
             </div>
             <% end %>
           </div>
@@ -69,20 +71,20 @@
       <div class="quote-list">
         <div class="quote-list-header"><%= t('view.category.recommended')%> <%= @category.name(I18n.locale) %></div>
         <div class="quote-list-posts">
-          <% @posts[0..7].each do |post| %>
+          <% @recommended_posts.each do |post| %>
           <div class="quote-list-post">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-5">
                 <%= image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive') %>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-7">
                 <div class="quote-list-category"><%= post.category.name(I18n.locale) %>:</div>
                 <h3><%= link_to post.title(I18n.locale), post %></h3>
                 <div class="quote-list-quote">
                   <% if locale_en? %>
-                  <%= post.en_description.try(:truncate, 80) %>
+                  <%= post.en_description.try(:truncate, 100) %>
                   <% else %>
-                  <%= post.zh_description.try(:truncate, 36) %>
+                  <%= post.zh_description.try(:truncate, 48) %>
                   <% end %>
                 </div>
               </div>
@@ -131,6 +133,10 @@
       <%= render partial: 'post', locals: { post: post } %>
     </div>
     <% end %>
+  </div>
+  <div class="row">
+    <div class="col-sm-6"><%= link_to_previous_page @posts, image_tag('frontend/prev.png') %></div>
+    <div class="col-sm-6 text-right"><%= link_to_next_page @posts, image_tag('frontend/next.png') %></div>
   </div>
 </div>
 <div class="wrap-archive mt20">
