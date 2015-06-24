@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Cms::PostsController < Cms::BaseController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :trash]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :trash, :restore]
   
   def index
     @posts = Post.order(published_at: :desc).page(params[:page]).per(40)
@@ -58,7 +58,12 @@ class Cms::PostsController < Cms::BaseController
 
   def trash
     @post.trash!
-    redirect_to draft_cms_posts_path(page: params[:page]), notice: 'Post was successfully trashed.'
+    redirect_to [:cms, @post], notice: 'Post was successfully trashed.'
+  end
+
+  def restore
+    @post.restore!
+    redirect_to [:cms, @post], notice: 'Post was successfully restored.'
   end
 
   private

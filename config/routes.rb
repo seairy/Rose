@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  get '', to: redirect('/en')
+  get '', to: 'application#auto_select_language'
   scope "/:locale", locale: /en|zh/, module: :frontend do
     root 'home#index'
     resources :categories
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       member do
         put :publish
         delete :trash
+        put :restore
       end
     end
     resources :experts

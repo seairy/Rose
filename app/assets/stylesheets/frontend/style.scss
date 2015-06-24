@@ -1,7 +1,7 @@
-$heading_font: 'Oswald', 'Open Sans', Helvetica, Arial, sans-serif;
-$normal_font: 'Gentium Book Basic', 'Open Sans', Helvetica, Arial, sans-serif;
-$footing_font: 'Abel', 'Open Sans', Helvetica, Arial, sans-serif;
-$lg_font: 'LeagueGothic-Regular', Helvetica, Arial, sans-serif;
+$heading_font: 'Oswald', 'Open Sans', Helvetica, Arial, sans-serif, SimSun;
+$normal_font: 'Gentium Book Basic', 'Open Sans', Helvetica, Arial, sans-serif, SimSun;
+$footing_font: 'Abel', 'Open Sans', Helvetica, Arial, sans-serif, SimSun;
+$lg_font: 'LeagueGothic-Regular', Helvetica, Arial, sans-serif, SimSun;
 $primary_color: #110a3e;
 
 header.wrap {
@@ -10,22 +10,6 @@ header.wrap {
   width: 100%;
   background: asset-url("frontend/header_bg@2x.jpg");
   background-size: 1920px 200px;
-  .search {
-    margin-top: 36px;
-    input {
-      padding: 4px 8px;
-      border: 1px #ccc solid;
-      background-color: #eee;
-    }
-  }
-  .subscribe {
-    margin-top: 36px;
-    input {
-      padding: 4px 8px;
-      border: 1px #ccc solid;
-      background-color: #eee;
-    }
-  }
   .title {
     h1 {
       margin: 10px 0 8px;
@@ -220,7 +204,7 @@ nav.wrap {
     color: #fff;
     text-transform: uppercase;
   }
-  input {
+  input.text-field {
     float: left;
     border: none;
     background-color: #ddd;
@@ -235,7 +219,7 @@ nav.wrap {
     color: #fff;
     text-transform: uppercase;
   }
-  input {
+  input.text-field {
     float: left;
     border: none;
     background-color: #fff;
@@ -552,12 +536,11 @@ h1.post-title {
   .quote-list {
     .quote-list-posts {
       .quote-list-post {
-        margin-bottom: 11px;
+        margin-bottom: 23px;
         .quote-list-category {
           font-size: 14px;
         }
         h3 {
-          margin-bottom: 10px;
           height: 20px;
           line-height: 20px;
           a {
@@ -566,9 +549,10 @@ h1.post-title {
         }
         .quote-list-quote {
           display: block;
-          padding: 6px 0 4px;
-          height: 42px;
+          padding: 2px 0 4px;
+          height: 43px;
           font-size: 10px;
+          line-height: 13px;
         }
       }
     }
@@ -581,7 +565,7 @@ h1.post-title {
       margin-top: 20px;
       font-size: 26px;
     }
-    input {
+    input.text-field {
       margin: 20px 0 0 10px;
       width: 180px;
       line-height: 32px;
@@ -595,14 +579,20 @@ h1.post-title {
       margin-top: 32px;
       font-size: 26px;
     }
-    input {
+    input.text-field {
       margin: 32px 0 0 10px;
       width: 157px;
       line-height: 32px;
     }
   }
   .home-post {
-    min-height: 360px;
+    height: 340px;
+    article {
+      .description {
+        overflow: hidden;
+        height: 40px;
+      }
+    }
   }
   .category-post {
     min-height: 360px;
@@ -657,7 +647,7 @@ h1.post-title {
   .quote-list {
     .quote-list-posts {
       .quote-list-post {
-        margin-bottom: 11px;
+        margin-bottom: 18px;
         .quote-list-category {
           font-size: 14px;
         }
@@ -673,6 +663,7 @@ h1.post-title {
           display: block;
           height: 63px;
           font-size: 13px;
+          line-height: 18px;
         }
       }
     }
@@ -685,10 +676,13 @@ h1.post-title {
       margin-top: 20px;
       font-size: 26px;
     }
-    input {
+    input.text-field {
       margin: 20px 0 0 10px;
-      width: 240px;
+      width: 220px;
       line-height: 32px;
+    }
+    input.submit {
+      margin-top: 20px;
     }
   }
   .home-subscribe {
@@ -699,14 +693,23 @@ h1.post-title {
       margin-top: 32px;
       font-size: 26px;
     }
-    input {
+    input.text-field {
       margin: 32px 0 0 10px;
-      width: 217px;
+      width: 197px;
       line-height: 32px;
+    }
+    input.submit {
+      margin-top: 32px;
     }
   }
   .home-post {
-    min-height: 394px;
+    height: 394px;
+    article {
+      .description {
+        overflow: hidden;
+        height: 40px;
+      }
+    }
   }
   .category-post {
     min-height: 390px;

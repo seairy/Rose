@@ -73,10 +73,10 @@
             <%= link_to 'contact', contact_path %>
           </div>
           <div class="col-md-2">
-            <%= link_to 'search' %>
+            <%= link_to 'search', anchor: 'search-bar' %>
           </div>
           <div class="col-md-2">
-            <%= link_to 'subscribe' %>
+            <%= link_to 'subscribe', anchor: 'subscribe-bar' %>
           </div>
         </div>
       </div>
@@ -90,11 +90,7 @@
         <div class="row">
           <div class="col-sm-12">
             <p class="text-center">© 2015 SPARKLE BRITAIN LTD. ALL RIGHTS RESERVED.</p>
-            <% if I18n.locale == :en %>
-            <%= image_tag('frontend/copyright_en.png', class: 'img-responsive center-block') %>
-            <% else %>
             <%= image_tag('frontend/copyright_cn.png', class: 'img-responsive center-block') %>
-            <% end %>
           </div>
         </div>
       </div>

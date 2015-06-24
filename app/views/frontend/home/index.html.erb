@@ -117,14 +117,16 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="home-search">
+      <div id="search-bar" class="home-search">
         <span>search</span>
-        <input id="home-search-text" type="text" />
+        <input id="home-search-text" type="text" class="text-field" />
+        <%= image_submit_tag('frontend/search_submit.jpg', class: 'submit') %>
         <div class="clear"></div>
       </div>
-      <div class="home-subscribe">
+      <div id="subscribe-bar" class="home-subscribe">
         <span>subscribe</span>
-        <input id="home-subscribe-text" type="text" />
+        <input id="home-subscribe-text" type="text" class="text-field" />
+        <%= image_submit_tag('frontend/subscribe_submit.jpg', class: 'submit') %>
         <div class="clear"></div>
       </div>
       <div class="home-gallery">

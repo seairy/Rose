@@ -112,7 +112,11 @@
       <%= link_to 'Return', cms_posts_path, class: 'btn btn-default' %>&nbsp;
       <%= link_to 'Edit', edit_cms_post_path(@post), class: 'btn btn-primary' %>&nbsp;
       <% if @post.draft? %><%= link_to 'Publish', publish_cms_post_path(@post), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success' %>&nbsp;<% end %>
-      <%= link_to 'Delete', [:cms, @post], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <% if @post.trashed? %>
+      <%= link_to 'Restore', restore_cms_post_path(@post), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success' %>&nbsp;
+      <% else %>
+      <%= link_to 'Delete', trash_cms_post_path(@post, page: params[:page]), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <% end %>
     </div>
   </div>
 </div>

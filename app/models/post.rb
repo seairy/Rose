@@ -14,6 +14,9 @@ class Post < ActiveRecord::Base
     event :trash do
       transitions to: :trashed
     end
+    event :restore do
+      transitions from: :trashed, to: :draft
+    end
   end
   multilingual :title, :home_description, :description, :content
   scope :search, ->(keyword) { where("en_title LIKE '%#{keyword}%' OR zh_title LIKE '%#{keyword}%'") }
