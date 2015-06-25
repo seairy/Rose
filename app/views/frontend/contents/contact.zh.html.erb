@@ -1,0 +1,27 @@
+<div class="contact-wrap">
+  <div class="container pt40">
+    <%= form_tag do %>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 contact-item">
+          <label>姓名</label>
+          <%= text_field_tag 'contact' %>
+        </div>
+        <div class="col-md-4 col-md-offset-4 contact-item">
+          <label>电子邮件</label>
+          <%= text_field_tag 'contact' %>
+        </div>
+        <div class="col-md-4 col-md-offset-4 contact-item">
+          <label>主题</label>
+          <%= text_field_tag 'contact' %>
+        </div>
+        <div class="col-md-4 col-md-offset-4 contact-item">
+          <label>内容</label>
+          <%= text_area_tag 'contact', nil, row: 10 %>
+        </div>
+        <div class="col-md-4 col-md-offset-4 contact-action">
+          <%= submit_tag '提交' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

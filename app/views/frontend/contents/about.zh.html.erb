@@ -37,15 +37,7 @@
         <div class="about-content">
           <div class="row">
             <div class="col-sm-6">
-              <p class="no-padding">这个平台的形式多样。在中国，电子版<span class="site-name">《英国老帽儿》</span>杂志可在众多航空公司的航班上读到，其中包括：首都航空、中国南方航空，海南航空、香港航空、长龙航空、奥凯航空、天津航空和西部航空。同时，读者可在本网站上免费下载<span class="site-name">《英国老帽儿》</span>杂志。此杂志在iPad Mini大小的平板电脑上便可获得最佳阅读效果。</p>
-              <div class="row">
-                <div class="col-sm-6">
-                  <%= image_tag 'frontend/logo/loong_airlines.png', class: 'img-responsive' %>
-                </div>
-                <div class="col-sm-6">
-                  <%= image_tag 'frontend/logo/okair.png', class: 'img-responsive' %>
-                </div>
-              </div>
+              <p class="no-padding">这个平台的形式多样。在中国，电子版<span class="site-name">《英国老帽儿》</span>杂志可在众多航空公司的航班上读到，其中包括：首都航空、海南航空、奥凯航空和天津航空。同时，读者可在本网站上免费下载<span class="site-name">《英国老帽儿》</span>杂志。此杂志在iPad Mini大小的平板电脑上便可获得最佳阅读效果。</p>
             </div>
             <div class="col-sm-6">
               <div class="row">
@@ -53,19 +45,13 @@
                   <%= image_tag 'frontend/logo/capital_airlines.png', class: 'img-responsive' %>
                 </div>
                 <div class="col-sm-6">
-                  <%= image_tag 'frontend/logo/china_southern_airlines.png', class: 'img-responsive' %>
-                </div>
-                <div class="col-sm-6">
                   <%= image_tag 'frontend/logo/hainan_airlines.png', class: 'img-responsive' %>
                 </div>
                 <div class="col-sm-6">
-                  <%= image_tag 'frontend/logo/hk_airlines.png', class: 'img-responsive' %>
+                  <%= image_tag 'frontend/logo/okair.png', class: 'img-responsive' %>
                 </div>
                 <div class="col-sm-6">
                   <%= image_tag 'frontend/logo/tianjin_airlines.png', class: 'img-responsive' %>
-                </div>
-                <div class="col-sm-6">
-                  <%= image_tag 'frontend/logo/west_air.png', class: 'img-responsive' %>
                 </div>
               </div>
             </div>
@@ -133,7 +119,7 @@
         <div class="about-content">
           <div class="row">
             <div class="col-sm-6">
-              <p>在此献上<span class="site-name">《英国老帽儿》</span>团队的美好祝福！</p>
+              <p>在此献上<%= link_to raw('<span class="site-name">《英国老帽儿》</span>团队'), experts_path %>的美好祝福！</p>
             </div>
           </div>
         </div>
