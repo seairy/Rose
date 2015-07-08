@@ -123,16 +123,16 @@
     </footer>
     <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
     <script type="text/javascript">
-      $(document).ready(function() {
-        $('.navbar-nav > li').bind('mouseover', openSubMenu);
-        $('.navbar-nav > li').bind('mouseout', closeSubMenu);
-        function openSubMenu() {
-          $('#sub-navbar-category-1').css('visibility', 'visible');  
-        };
-        function closeSubMenu() {
-          $('#sub-navbar-category-1').css('visibility', 'hidden'); 
-        };
-      });
+      // $(document).ready(function() {
+      //   $('.navbar-nav > li').bind('mouseover', openSubMenu);
+      //   $('.navbar-nav > li').bind('mouseout', closeSubMenu);
+      //   function openSubMenu() {
+      //     $('#sub-navbar-category-1').css('visibility', 'visible');  
+      //   };
+      //   function closeSubMenu() {
+      //     $('#sub-navbar-category-1').css('visibility', 'hidden'); 
+      //   };
+      // });
     </script>
     <%= content_for :javascript %>
   </body>
