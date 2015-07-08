@@ -12,6 +12,15 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?3efb7536741f5d227936984ba1796fad";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
   </head>
   <body>
     <div class="container">
@@ -44,7 +53,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <% @categories.each do |category| %>
-            <li><%= link_to category.name(I18n.locale), category %></li>
+            <li>
+              <%= link_to category.name(I18n.locale), category %>
+            </li>
             <% end %>
           </ul>
           <p class="nav navbar-text navbar-right">
@@ -57,6 +68,21 @@
         </div>
       </div>
     </nav>
+    <div class="container">
+      <div class="row">
+        <% @categories.each do |category| %>
+        <div class="col-md-12 sub-navbar" id="sub-navbar-category-<%= category.id %>">
+          <ul>
+            <% category.posts.published.latest.limit(5).each do |post| %>
+            <li>
+              <%= link_to image_tag(post.cover.w400_h300_fl_q80), post, target: '_blank' %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+      </div>
+    </div>
     <div class="position-wrap">
       <div class="container">
         <div class="row">
@@ -96,6 +122,18 @@
       </div>
     </footer>
     <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.navbar-nav > li').bind('mouseover', openSubMenu);
+        $('.navbar-nav > li').bind('mouseout', closeSubMenu);
+        function openSubMenu() {
+          $('#sub-navbar-category-1').css('visibility', 'visible');  
+        };
+        function closeSubMenu() {
+          $('#sub-navbar-category-1').css('visibility', 'hidden'); 
+        };
+      });
+    </script>
     <%= content_for :javascript %>
   </body>
 </html>
