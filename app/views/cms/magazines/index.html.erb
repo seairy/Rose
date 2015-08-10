@@ -16,7 +16,7 @@
         <% @magazines.each do |magazine| %>
         <tr>
           <td><%= magazine.en_issue %></td>
-          <td><%= image_tag magazine.cover.w160_h120_fl_q80.url %></td>
+          <td><%= image_tag magazine.cover.w300_h400_fl_q80.url %></td>
           <td class="table-action">
             <%= link_to raw('<i class="fa fa-file-text-o"></i>'), [:cms, magazine] %>
             <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_cms_magazine_path(magazine) %>
