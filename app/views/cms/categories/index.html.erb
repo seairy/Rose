@@ -9,20 +9,22 @@
         <table class="table table-dark table-striped mb30">
           <thead>
             <tr>
-              <th><%= brac_t 'category.icon' %></th>
               <th><%= brac_t 'category.en_name' %></th>
               <th><%= brac_t 'category.zh_name' %></th>
+              <th><%= brac_t 'category.visible' %></th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <% @categories.each do |category| %>
             <tr>
-              <td><%= category.icon %></td>
               <td><%= category.en_name %></td>
               <td><%= category.zh_name %></td>
+              <td>
+                <%= content_tag :span, brac_t('category.visible'), class: 'label label-success' if category.visible? %>
+                <%= content_tag :span, brac_t('category.invisible'), class: 'label label-danger' unless category.visible? %>
+              </td>
               <td class="table-action">
-                <%= link_to raw('<i class="fa fa-file-text-o"></i>'), [:cms, category] %>
                 <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_cms_category_path(category) %>
               </td>
             </tr>

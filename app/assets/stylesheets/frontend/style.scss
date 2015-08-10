@@ -152,9 +152,15 @@ nav.wrap {
       }
     }
     .description {
+      word-wrap: break-word;
       font-family: $heading_font;
       color: #666;
       font-size: 14px;
+      letter-spacing: 0;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
   }
 }
@@ -329,6 +335,38 @@ nav.wrap {
       padding: 4px 8px;
       border: 1px #ccc solid;
       background-color: #eee;
+    }
+  }
+}
+
+.magazine-wrap {
+  margin-bottom: 20px;
+  .magazine {
+    article {
+      img {
+        max-width: 100%;
+        margin: 0 0 6px;
+      }
+      .category {
+        a {
+          font-size: 14px;
+          font-weight: bold;
+          color: $primary_color;
+        }
+      }
+      .title {
+        margin: 0 0 1px;
+        a {
+          font-family: $lg_font;
+          font-size: 24px;
+          color: $primary_color;
+        }
+      }
+      .description {
+        font-family: $heading_font;
+        color: #666;
+        font-size: 14px;
+      }
     }
   }
 }
@@ -599,8 +637,12 @@ h1.post-title {
     }
     input.text-field {
       margin: 20px 0 0 10px;
-      width: 180px;
+      padding-left: 5px;
+      width: 165px;
       line-height: 32px;
+    }
+    input.submit {
+      margin-top: 20px;
     }
   }
   .home-subscribe {
@@ -613,8 +655,12 @@ h1.post-title {
     }
     input.text-field {
       margin: 32px 0 0 10px;
-      width: 157px;
+      padding-left: 5px;
+      width: 143px;
       line-height: 32px;
+    }
+    input.submit {
+      margin-top: 32px;
     }
   }
   .home-post {
@@ -710,6 +756,7 @@ h1.post-title {
     }
     input.text-field {
       margin: 20px 0 0 10px;
+      padding-left: 5px;
       width: 220px;
       line-height: 32px;
     }

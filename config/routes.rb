@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     resources :posts
     get 'about', to: 'contents#about', as: :about
     get 'contact', to: 'contents#contact', as: :contact
-    get 'experts', to: 'contents#experts', as: :experts
+    resources :experts
+    resources :magazines
+    post 'search', to: 'searches#create', as: :search
+    post 'subscribe', to: 'subscribers#toggle', as: :subscribe
   end
   namespace :cms do
     root 'dashboard#index'
@@ -27,6 +30,7 @@ Rails.application.routes.draw do
       end
     end
     resources :experts
+    resources :magazines
     resources :administrators
     resource :profile do
       get 'edit_password'

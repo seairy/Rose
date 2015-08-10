@@ -14,6 +14,6 @@ class Frontend::BaseController < ApplicationController
     end
 
     def find_categories
-      @categories = Category.all
+      @categories = Category.visible
     end
 end

@@ -23,15 +23,15 @@
         <div class="leftpanelinner">    
           <h5 class="sidebartitle">Navigation</h5>
           <ul class="nav nav-pills nav-stacked nav-bracket">
-            <li><%= link_to raw('<i class="fa fa-home"></i> <span>Dashboard</span>'), cms_dashboard_path %></li>
-            <li class="nav-parent"><a href=""><i class="fa fa-compass"></i> <span>Category</span></a>
-              <ul class="children">
+            <li<%= raw(' class="active"') if controller_name == 'dashboard' %>><%= link_to raw('<i class="fa fa-home"></i> <span>Dashboard</span>'), cms_dashboard_path %></li>
+            <li class="nav-parent<%= ' nav-active active' if controller_name == 'categories' %>"><a href=""><i class="fa fa-bookmark"></i> <span>Category</span></a>
+              <ul class="children"<%= raw(' style="display: block"') if controller_name == 'categories' %>>
                 <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> List"), cms_categories_path %></li>
                 <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> New"), new_cms_category_path %></li>
               </ul>
             </li>
-            <li class="nav-parent"><a href=""><i class="fa fa-compass"></i> <span>Post</span></a>
-              <ul class="children">
+            <li class="nav-parent<%= ' nav-active active' if controller_name == 'posts' %>"><a href=""><i class="fa fa-file-text-o"></i> <span>Post</span></a>
+              <ul class="children"<%= raw(' style="display: block"') if controller_name == 'posts' %>>
                 <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> All"), cms_posts_path %></li>
                 <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> Draft"), draft_cms_posts_path %></li>
                 <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> Published"), published_cms_posts_path %></li>
@@ -39,10 +39,16 @@
                 <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> New"), new_cms_post_path %></li>
               </ul>
             </li>
-            <li class="nav-parent"><a href=""><i class="fa fa-compass"></i> <span>Expert</span></a>
-              <ul class="children">
+            <li class="nav-parent<%= ' nav-active active' if controller_name == 'experts' %>"><a href=""><i class="fa fa-users"></i> <span>Expert</span></a>
+              <ul class="children"<%= raw(' style="display: block"') if controller_name == 'experts' %>>
                 <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> List"), cms_experts_path %></li>
                 <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> New"), new_cms_expert_path %></li>
+              </ul>
+            </li>
+            <li class="nav-parent<%= ' nav-active active' if controller_name == 'magazines' %>"><a href=""><i class="fa fa-book"></i> <span>Magazine</span></a>
+              <ul class="children"<%= raw(' style="display: block"') if controller_name == 'magazines' %>>
+                <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> List"), cms_magazines_path %></li>
+                <li><%= link_to raw("<i class=\"fa fa-caret-right\"></i> New"), new_cms_magazine_path %></li>
               </ul>
             </li>
           </ul>

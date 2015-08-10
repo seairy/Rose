@@ -136,6 +136,10 @@ zh:
       header:
         one: 有 1 个错误发生导致「%{model}」无法被保存。
         other: 有 %{count} 个错误发生导致「%{model}」无法被保存。
+    email:
+      invalid: 无效的电子邮箱地址
+    keyword:
+      blank: 关键字不能为空
   helpers:
     select:
       prompt: 请选择
@@ -204,13 +208,20 @@ zh:
       short: "%b%d日 %H:%M"
     pm: 下午
   view:
+    page_prev: 上一页
+    page_next: 下一页
     home:
       title: 英国老帽儿
       subtitle: 田园风光+古典传统+现代时尚
       popular: 热门
       recommended: 推荐
+      search: 搜索
+      subscribe: 订阅
     post:
       see_more: 更多
     category:
       popular: 热门：
       recommended: 推荐：
+    email:
+      subscribed: 已订阅
+      unsubscribed: 已取消订阅

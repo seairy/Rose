@@ -107,16 +107,20 @@
     </div>
     <div class="col-sm-4">
       <div id="search-bar" class="home-search">
-        <span>search</span>
-        <input id="home-search-text" type="text" class="text-field" />
-        <%= image_submit_tag('frontend/search_submit.jpg', class: 'submit') %>
+        <%= form_tag search_path, id: 'search-form' do %>
+        <span><%= t('view.home.search') %></span>
+        <input id="home-search-text" name="keyword" type="text" class="text-field" placeholder="keyword" />
+        <%= image_submit_tag('frontend/search_submit.jpg', class: 'submit submit-search') %>
         <div class="clear"></div>
+        <% end %>
       </div>
       <div id="subscribe-bar" class="home-subscribe">
-        <span>subscribe</span>
-        <input id="home-subscribe-text" type="text" class="text-field" />
-        <%= image_submit_tag('frontend/subscribe_submit.jpg', class: 'submit') %>
+        <%= form_tag subscribe_path, id: 'subscribe-form' do %>
+        <span><%= t('view.home.subscribe') %></span>
+        <input id="home-subscribe-text" name="email" type="text" class="text-field" placeholder="yourname@example.com" />
+        <%= image_submit_tag('frontend/subscribe_submit.jpg', class: 'submit submit-subscribe') %>
         <div class="clear"></div>
+        <% end %>
       </div>
       <div class="home-gallery">
         <div class="row">
@@ -157,3 +161,30 @@
     </div>
   </div>
 </div>
+<% content_for :javascript do %>
+  <script>
+    $(document).ready(function() {
+      $('.submit-subscribe').on("click", function (e) {
+        e.preventDefault();
+        if($('#home-subscribe-text').val() == '') {
+          toastr.error('<%= t('errors.email.invalid') %>');
+        } else if(!(new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/).test($('#home-subscribe-text').val()))) {
+          toastr.error('<%= t('errors.email.invalid') %>');
+        } else {
+          $.ajax({
+            url: $('#subscribe-form').attr('action'),
+            data: $('#subscribe-form').serialize(),
+            method: 'POST',
+            success: function(data) {
+              if(data.result == 'success') {
+                toastr.success(data.message);
+              } else {
+                toastr.error(data.message);
+              }
+            }
+          });
+        }
+      });
+    });
+  </script>
+<% end %>

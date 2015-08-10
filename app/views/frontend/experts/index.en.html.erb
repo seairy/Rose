@@ -1,0 +1,22 @@
+<div class="experts-wrap">
+  <div class="container pt40">
+    <div class="row">
+      <% @experts.each do |expert| %>
+      <div class="col-md-6">
+        <div class="experts-person">
+          <div class="row">
+            <div class="col-md-4">
+              <%= image_tag(expert.portrait.w255_h340_fl_q80, class: 'portrait') %>
+            </div>
+            <div class="col-md-6">
+              <p class="experts-person-zh-name"><%= expert.zh_name %></p>
+              <p class="experts-person-en-name"><%= expert.en_name %></p>
+              <p class="experts-person-description"><%= expert.description(I18n.locale) %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

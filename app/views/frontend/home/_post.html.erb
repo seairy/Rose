@@ -2,7 +2,7 @@
   <%= link_to image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive'), post %>
   <div class="category"><%= link_to post.category.name(I18n.locale), '#' %></div>
   <h3 class="title"><%= link_to post.title(I18n.locale), post %></h3>
-  <div id="home-post-description" class="description">
+  <div class="description">
     <% if locale_en? %>
     <%= sanitize(post.en_content, tags: %w(span em)).try(:truncate, 220) %>
     <% else %>

@@ -1,0 +1,62 @@
+<div class="pageheader">
+  <h2><i class="fa fa-file-text-o"></i> Magazine <span>show</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">Magazine</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_tag nil, class: 'form-horizontal form-bordered' do %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'magazine.portrait' %></label>
+          <div class="col-sm-6">
+            <%= image_tag @magazine.cover.w800_h600_fl_q80, class: 'img-responsive' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'magazine.en_issue' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @magazine.en_issue, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'magazine.zh_issue' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @magazine.zh_issue, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'magazine.file' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @magazine.file.url, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'magazine.en_description' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @magazine.en_description, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'magazine.zh_description' %></label>
+          <div class="col-sm-6">
+            <%= text_area_tag :nil, @magazine.zh_description, readonly: true, rows: 8, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'magazine.position' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @magazine.position, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to 'Return', cms_magazines_path, class: 'btn btn-default' %>&nbsp;
+      <%= link_to 'Edit', edit_cms_magazine_path(@magazine), class: 'btn btn-primary' %>&nbsp;
+      <%= link_to 'Delete', [:cms, @magazine], method: :delete, data: { confirm: '确定要删除吗？' }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

@@ -19,7 +19,7 @@ class Cms::CategoriesController < Cms::BaseController
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to [:cms, @category], notice: 'Category was successfully created.'
+      redirect_to cms_categories_path, notice: 'Category was successfully created.'
     else
       render action: 'new'
     end
@@ -27,15 +27,10 @@ class Cms::CategoriesController < Cms::BaseController
   
   def update
     if @category.update(category_params)
-      redirect_to [:cms, @category], notice: 'Category was successfully updated.'
+      redirect_to cms_categories_path, notice: 'Category was successfully updated.'
     else
       render action: 'edit'
     end
-  end
-  
-  def destroy
-    @category.destroy
-    redirect_to cms_categories_path, notice: 'Category was successfully destroyed.'
   end
 
   private

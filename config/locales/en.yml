@@ -136,6 +136,10 @@ en:
       header:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
+    email:
+      invalid: Email address is invalid
+    keyword:
+      blank: Keyword can't be blank
   helpers:
     select:
       prompt: Please select
@@ -211,13 +215,20 @@ en:
         state/published: Published
         state/trashed: Trashed
   view:
+    page_prev: Previous
+    page_next: Next
     home:
       title: uk laomao
       subtitle: BRITISH AUTHENTIC
       popular: popular
       recommended: recommended
+      search: search
+      subscribe: subscribe
     post:
       see_more: see more
     category:
       popular: popular
       recommended: recommended
+    email:
+      subscribed: subscribed!
+      unsubscribed: unsubscribed!
