@@ -8,19 +8,20 @@ header.wrap {
   padding: 10px 0;
   border-top: 1px #000 solid;
   width: 100%;
-  background: asset-url("frontend/header_bg@2x.jpg");
+  background-color: #001140;
   background-size: 1920px 200px;
   .title {
     h1 {
       margin: 10px 0 8px;
-      font-family: $heading_font;
+      font-family: 'Cabin';
       font-size: 50px;
-      color: #001140;
+      color: #fff;
     }
     .sub {
       font-family: $lg_font;
       font-size: 20px;
       font-weight: bold;
+      color: #e3001c;
     }
   }
 }
@@ -250,7 +251,7 @@ nav.wrap {
 }
 
 .home-subscribe {
-  background: asset-url("frontend/header_bg.jpg");
+  background-color: #e3001c;
   span {
     float: left;
     font-family: $lg_font;
@@ -409,10 +410,8 @@ footer.wrap-related {
 
 footer.wrap-mirror {
   padding-top: 35px;
-  border-bottom: 1px #000 solid;
   width: 100%;
   height: 125px;
-  background: asset-url("frontend/header_bg.jpg");
 }
 
 footer.wrap-copyright {
