@@ -24,7 +24,7 @@
   <div class="row mb20">
     <div class="col-md-2"></div>
     <div class="col-md-6 post-content">
-      <%= raw @post.content(I18n.locale) %>
+      <%= raw @post.content(I18n.locale).with_wp %>
     </div>
     <div class="col-md-4">
       <div class="quote-list">
