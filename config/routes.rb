@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
+  mount API => '/api'
   get '', to: 'application#auto_select_language'
   scope "/:locale", locale: /en|zh/, module: :frontend do
     root 'home#index'

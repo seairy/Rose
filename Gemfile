@@ -19,6 +19,8 @@ gem 'sunspot_rails', '~> 2.1.1'
 gem 'sunspot_solr', '~> 2.1.1'
 gem 'ckeditor', '~> 4.1.1'
 gem 'responders', '~> 2.0'
+gem 'grape', '~> 0.10.1'
+gem 'grape-entity', '~> 0.4.4'
 gem 'faker', '~> 1.4.3'
 
 group :development, :test do
