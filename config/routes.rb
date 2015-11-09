@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '', to: 'application#auto_select_language'
   scope "/:locale", locale: /en|zh/, module: :frontend do
     root 'home#index'
+    get 'v2', to: 'home#index_v2'
     resources :categories
     resources :posts
     get 'about', to: 'contents#about', as: :about

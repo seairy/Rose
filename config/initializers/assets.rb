@@ -1,2 +1,2 @@
 Rails.application.config.assets.version = '1.0'
-Rails.application.config.assets.precompile += %w( frontend.css frontend.js cms.css cms.js cms_signin.css cms_signin.js ckeditor/* )
+Rails.application.config.assets.precompile += %w( frontend.css frontend.js frontend_v2.css frontend_v2.js cms.css cms.js cms_signin.css cms_signin.js ckeditor/* )
