@@ -1,6 +1,8 @@
 //= require frontend/bootstrap
 //= require frontend/bootstrap-theme
 //= require frontend/font-awesome
+//= require frontend_v2/animate.min
+//= require frontend_v2/responsive_bootstrap_carousel
 
 div.top {
   height: 56px;
@@ -23,9 +25,9 @@ ul.navi {
     background: asset-url("frontend_v2/navi_bg_left.jpg") no-repeat;
   }
   li.logo {
-    width: 200px;
+    width: 100px;
     img {
-      margin-left: 70px;
+      margin-left: 26px;
     }
   }
   li.right {
@@ -44,20 +46,15 @@ ul.navi {
   }
 }
 
-div.home-carousel {
-  div.carousel-caption {
-    h1 {
-      font-family: 'SimHei';
-      font-style: italic;
-      font-size: 60px;
-      font-weight: bold;
-      text-align: left;
-    }
-    p {
-      font-size: 22px;
-      font-weight: bold;
-      text-align: left;
-    }
+div.carousel-caption {
+  position: absolute;
+  h1, p {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
   }
 }
 
@@ -122,31 +119,29 @@ div.home-feature {
 div.home-category {
   padding: 20px 0;
   article {
+    position: relative;
     div.caption {
       position: absolute;
+      padding: 10px;
       bottom: 0;
-      padding: 8px 20px;
-      height: 80px;
-      width: 294px;
-      background: #000;
-      opacity: 0.5;
-      /* hack for ie8 */
-      filter: alpha(opacity=50);
-      /* hack for mozilla */
-      -moz-opacity: 0.5;
-      z-index: 99;
-      font-weight: bold;
-      color: #CCC;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
       h5 {
-        opacity: 1;
-        margin: 2px 0;
+        margin: 0 0 2px;
         font-size: 22px;
+        font-weight: bold;
         color: #fff;
       }
       div.description {
-        color: #fff;
+        color: #ddd;
         font-size: 12px;
         line-height: 16px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
       }
     }
   }
@@ -162,11 +157,17 @@ div.home-archive {
     border-bottom: 4px #bebebe solid;
     color: #bebebe;
   }
-  div.home-archive-post {
-    span.number {
+  div.home-archive-item {
+    margin: 6px 0;
+    div.number {
+      text-align: right;
+      line-height: 18px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 16px;
       color: #222;
     }
-    div.home-archive-post-title {
+    h5 {
+      margin: 0;
       a {
         color: #222;
       }
@@ -228,6 +229,50 @@ footer.wrap-copyright {
   }
 }
 
+div.language {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  margin-right: 70px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  width: 44px;
+  height: 50px;
+  background-color: rgba(39, 48, 117, 0.8);
+  img {
+    display: block;
+    margin: 4px auto 0;
+    width: 30px;
+  }
+  p {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 992px) {
+  div[class^="col"] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  div.carousel-caption {
+    top: 200px;
+    h1, p {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    h1 {
+      font-size: 50px;
+    }
+  }
+}
+
 @media (min-width: 1200px) {
   div[class^="col"] {
     padding-left: 5px;
@@ -236,5 +281,15 @@ footer.wrap-copyright {
   .row {
     margin-left: -5px;
     margin-right: -5px;
+  }
+  div.carousel-caption {
+    top: 300px;
+    h1, p {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    h1 {
+      font-size: 60px;
+    }
   }
 }
