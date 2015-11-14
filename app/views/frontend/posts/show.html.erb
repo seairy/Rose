@@ -1,15 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-8 col-md-offset-2">
       <h1 class="post-title"><%= @post.title(I18n.locale) %></h1>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-6">
+    <div class="col-md-8 col-md-offset-2">
       <div class="post-quote"><%= @post.description(I18n.locale) %></div>
     </div>
   </div>
@@ -22,59 +20,42 @@
     </div>
   </div>
   <div class="row mb20">
-    <div class="col-md-2"></div>
-    <div class="col-md-6 post-content">
+    <div class="col-md-8 col-md-offset-2 post-content">
       <%= raw @post.content(I18n.locale).with_wp %>
     </div>
-    <div class="col-md-4">
-      <div class="quote-list">
-        <div class="quote-list-header"><%= t('view.post.see_more')%></div>
-        <div class="quote-list-posts">
-          <% @posts[0..7].each do |post| %>
-          <div class="quote-list-post">
-            <div class="row">
-              <div class="col-sm-6">
-                <%= image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive') %>
-              </div>
-              <div class="col-sm-6">
-                <div class="quote-list-category"><%= post.category.name(I18n.locale) %>:</div>
-                <h3><%= link_to post.title(I18n.locale), post %></h3>
-                <div class="quote-list-quote">
-                  <% if locale_en? %>
-                  <%= post.en_description.try(:truncate, 80) %>
-                  <% else %>
-                  <%= post.zh_description.try(:truncate, 36) %>
-                  <% end %>
+  </div>
+  <div class="row mb20">
+    <div class="col-md-8 col-md-offset-2">
+      <h3 class="post-recent-header"><%= t('view.post.recent') %></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 post-recent">
+      <% @recent_posts.each do |post| %>
+        <div class="col-xs-3 mb10">
+          <article>
+            <%= link_to image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive'), post %>
+            <div class="caption">
+              <h5><%= link_to post.title(I18n.locale), post %></h5>
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="category"><i class="fa fa-map-marker"></i> <%= post.category.name(I18n.locale) %></div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="page-view"><i class="fa fa-heart"></i> <%= post.page_view %></div>
                 </div>
               </div>
             </div>
-          </div>
-          <% end %>
+          </article>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="wrap-archive mt20">
-  <div class="container">
-    <div class="row">
-      <% @archive_posts.each_with_index do |post, i| %>
-      <div class="col-sm-4">
-        <div class="archive-post">
-          <div class="row">
-            <div class="col-sm-1"><span class="number"><%= i + 1 %></span></div>
-            <div class="col-sm-11 archive-post-title"><%= link_to post.title(I18n.locale), post %></div>
-          </div>
-        </div>
-      </div>
-      <% end %>
+        <% end %>
     </div>
   </div>
 </div>
 <% content_for :javascript do %>
   <script>
     jQuery(document).ready(function(){
-      $(".post-content img").addClass("img-responsive");
+      $('.post-content img').addClass('img-responsive');
     });
   </script>
 <% end %>

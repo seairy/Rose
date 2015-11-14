@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Frontend::BaseController < ApplicationController
-  layout 'frontend'
+  layout 'frontend_v2'
   before_action :set_locale
   before_action :find_categories
 

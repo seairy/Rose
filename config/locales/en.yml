@@ -218,6 +218,7 @@ en:
     page_prev: Previous
     page_next: Next
     home:
+      name: home
       title: uk laomao
       subtitle: BRITISH AUTHENTIC
       popular: popular
@@ -226,6 +227,7 @@ en:
       subscribe: subscribe
     post:
       read_more: read more
+      recent: most recent
     category:
       popular: popular
       recommended: recommended
