@@ -14,7 +14,7 @@
             <div class="carousel-caption simple_carousel_caption simple_carousel_caption_center" data-animation="animated fadeInLeft">
               <h1 class="text-left" data-animation="animated fadeInDown"><%= post.title(I18n.locale) %></h1>
               <p class="text-left" data-animation="animated fadeInDown"><%= post.home_description(I18n.locale) %></p>
-              <%= link_to t('view.post.read_more'), post, data: { animation: 'animated fadeInDown' }, class: 'simple_carousel_transparent_button carousel-read-more' %>
+              <%#= link_to t('view.post.read_more'), post, data: { animation: 'animated fadeInDown' }, class: 'simple_carousel_transparent_button carousel-read-more' %>
             </div>
           </div>
           <% end %>
@@ -53,28 +53,28 @@
           <div class="col-xs-10 col-xs-offset-1">
             <%= image_tag 'frontend_v2/tag_feature.jpg' %>
             <div class="home-feature-canvas">
-              <div class="home-feature-large"><%= image_tag @carousel_posts[0].cover.w800_h600_fl_q80, class: 'img-responsive' %></div>
-              <div class="home-feature-small home-feature-f5d8b8">
+              <a href="<%= url_for(@carousel_posts[0]) %>" class="home-feature-large"><%= image_tag @carousel_posts[0].cover.w800_h600_fl_q80, class: 'img-responsive' %></a>
+              <a href="<%= url_for(@carousel_posts[2]) %>" class="home-feature-small home-feature-f5d8b8">
                 <%= image_tag @carousel_posts[2].cover.w800_h600_fl_q80, class: 'img-responsive' %>
                 <h5><%= @carousel_posts[2].title(I18n.locale) %></h5>
                 <p class="description"><%= @carousel_posts[2].home_description(I18n.locale) %></p>
-              </div>
-              <div class="home-feature-small home-feature-3b3633">
+              </a>
+              <a href="<%= url_for(@carousel_posts[3]) %>" class="home-feature-small home-feature-3b3633">
                 <%= image_tag @carousel_posts[3].cover.w800_h600_fl_q80, class: 'img-responsive' %>
                 <h5><%= @carousel_posts[3].title(I18n.locale) %></h5>
                 <p class="description"><%= @carousel_posts[3].home_description(I18n.locale) %></p>
-              </div>
-              <div class="home-feature-small home-feature-5a798b">
+              </a>
+              <a href="<%= url_for(@carousel_posts[4]) %>" class="home-feature-small home-feature-5a798b">
                 <%= image_tag @carousel_posts[4].cover.w800_h600_fl_q80, class: 'img-responsive' %>
                 <h5><%= @carousel_posts[4].title(I18n.locale) %></h5>
                 <p class="description"><%= @carousel_posts[4].home_description(I18n.locale) %></p>
-              </div>
-              <div class="home-feature-small home-feature-dcdcdc">
+              </a>
+              <a href="<%= url_for(@carousel_posts[5]) %>" class="home-feature-small home-feature-dcdcdc">
                 <%= image_tag @carousel_posts[5].cover.w800_h600_fl_q80, class: 'img-responsive' %>
                 <h5><%= @carousel_posts[5].title(I18n.locale) %></h5>
                 <p class="description"><%= @carousel_posts[5].home_description(I18n.locale) %></p>
-              </div>
-              <div class="home-feature-large"><%= image_tag @carousel_posts[1].cover.w800_h600_fl_q80, class: 'img-responsive' %></div>
+              </a>
+              <a href="<%= url_for(@carousel_posts[1]) %>" class="home-feature-large"><%= image_tag @carousel_posts[1].cover.w800_h600_fl_q80, class: 'img-responsive' %></a>
             </div>
           </div>
         </div>

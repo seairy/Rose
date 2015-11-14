@@ -80,15 +80,16 @@ div.home-feature {
   background-color: #eaeaea;
   div.home-feature-canvas {
     margin-top: 20px;
-    div {
+    a {
+      display: block;
       float: left;
       height: 354px;
       overflow: hidden;
     }
-    div.home-feature-large {
+    a.home-feature-large {
       width: 50%;
     }
-    div.home-feature-small {
+    a.home-feature-small {
       width: 25%;
       h5 {
         margin: 14px 20px;
@@ -99,22 +100,19 @@ div.home-feature {
         margin: 14px 20px;
       }
     }
-    div.home-feature-magazine {
-      width: 200px;
-    }
-    div.home-feature-f5d8b8 {
+    a.home-feature-f5d8b8 {
       background-color: #465aa8;
       color: #fff;
     }
-    div.home-feature-3b3633 {
+    a.home-feature-3b3633 {
       color: #fff;
       background-color: #3b3633;
     }
-    div.home-feature-5a798b {
+    a.home-feature-5a798b {
       color: #fff;
       background-color: #5a798b;
     }
-    div.home-feature-dcdcdc {
+    a.home-feature-dcdcdc {
       background-color: #dcdcdc;
     }
   }
@@ -434,7 +432,7 @@ div.language {
     margin-right: -5px;
   }
   div.carousel-caption {
-    top: 300px;
+    top: 360px;
     h1, p {
       padding-left: 60px;
       padding-right: 60px;
