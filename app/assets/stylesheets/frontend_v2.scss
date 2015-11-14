@@ -142,7 +142,9 @@ div.home-category {
         font-size: 12px;
         line-height: 16px;
         overflow: hidden;
+        text-overflow: ellipsis;
         display: -webkit-box;
+        display: -moz-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
       }
