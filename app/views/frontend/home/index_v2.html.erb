@@ -35,41 +35,6 @@
             </ul>
           </div>
           <div class="col-xs-9">
-            <!-- <div class="home-carousel">
-              <div id="home-carousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#home-carousel" data-slide-to="1"></li>
-                  <li data-target="#home-carousel" data-slide-to="2"></li>
-                  <li data-target="#home-carousel" data-slide-to="3"></li>
-                  <li data-target="#home-carousel" data-slide-to="4"></li>
-                  <li data-target="#home-carousel" data-slide-to="5"></li>
-                  <li data-target="#home-carousel" data-slide-to="6"></li>
-                  <li data-target="#home-carousel" data-slide-to="7"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                  <% @carousel_posts.each_with_index do |post, i| %>
-                  <div class="item<%= ' active' if i.zero? %>">
-                    <%= link_to image_tag(post.cover.w1800_h1350_fl_q80), post %>
-                    <a href="<%= url_for(post) %>">
-                      <div class="carousel-caption">
-                        <h1><%= post.title(I18n.locale) %></h1>
-                        <p><%= post.home_description(I18n.locale) %></p>
-                      </div>
-                    </a>
-                  </div>
-                  <% end %>
-                </div>
-                <a class="left carousel-control" href="#home-carousel" role="button" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                  <span class="sr-only"><%= t('view.page_prev') %></span>
-                </a>
-                <a class="right carousel-control" href="#home-carousel" role="button" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                  <span class="sr-only"><%= t('view.page_next') %></span>
-                </a>
-              </div>
-            </div> -->
             <div id="simple_carousel" class="carousel simple_scale animate_text simple_carousel_wrapper" data-ride="carousel" data-interval="5000" data-pause="hover">
               <ol class="carousel-indicators simple_carousel_indicators">
                 <% @carousel_posts.each_with_index do |post, i| %>
@@ -83,7 +48,7 @@
                   <div class="carousel-caption simple_carousel_caption simple_carousel_caption_center" data-animation="animated fadeInLeft">
                     <h1 class="text-left" data-animation="animated fadeInDown"><%= post.title(I18n.locale) %></h1>
                     <p class="text-left" data-animation="animated fadeInDown"><%= post.home_description(I18n.locale) %></p>
-                    <a href="#" class="simple_carousel_transparent_button" data-animation="animated fadeInDown">see more</a>
+                    <a href="#" class="simple_carousel_transparent_button" data-animation="animated fadeInDown"><%= t('view.post.read_more') %></a>
                   </div>
                 </div>
                 <% end %>
@@ -130,8 +95,9 @@
                     <p class="description"><%= @carousel_posts[2].home_description(I18n.locale) %></p>
                   </div>
                   <div class="home-feature-small home-feature-3b3633">
-                    <%= image_tag 'frontend_v2/magazine_demo.jpg', class: 'img-responsive' %>
-                    <h5>《UKLM》ISSUE 06</h5>
+                    <%= image_tag @carousel_posts[3].cover.w800_h600_fl_q80, class: 'img-responsive' %>
+                    <h5><%= @carousel_posts[3].title(I18n.locale) %></h5>
+                    <p class="description"><%= @carousel_posts[3].home_description(I18n.locale) %></p>
                   </div>
                   <div class="home-feature-small home-feature-5a798b">
                     <%= image_tag @carousel_posts[4].cover.w800_h600_fl_q80, class: 'img-responsive' %>
