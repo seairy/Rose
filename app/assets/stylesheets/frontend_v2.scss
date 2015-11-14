@@ -36,7 +36,7 @@ ul.navi {
     background: asset-url("frontend_v2/navi_bg_right.jpg") no-repeat;
   }
   li.item {
-    padding: 0 24px;
+    padding: 0 18px;
     line-height: 72px;
     background: asset-url("frontend_v2/navi_sperator.jpg") no-repeat;
     a {
@@ -196,15 +196,21 @@ div.home-expert {
 }
 
 h1.post-title {
-  font-family: 'Microsoft YaHei';
   font-weight: bold;
-  font-style: italic;
-  color: #5c5b5b;
+}
+
+h1.post-title-zh {
+  font-family: 'Microsoft YaHei';
+}
+
+h1.post-title-en {
+  font-family: 'Helvetica';
 }
 
 div.post-quote {
   margin-top: 10px;
   color: #5c5b5b;
+  font-size: 16px;
 }
 
 div.post-show {
