@@ -15,6 +15,10 @@
         </div>
         <% end %>
       </div>
+      <div class="row">
+        <div class="col-xs-6"><%= link_to_previous_page @posts, image_tag('frontend/prev.png') %></div>
+        <div class="col-xs-6 text-right"><%= link_to_next_page @posts, image_tag('frontend/next.png') %></div>
+      </div>
     </div>
   </div>
 </div>
