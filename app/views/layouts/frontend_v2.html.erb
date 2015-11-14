@@ -17,12 +17,33 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
+            <div class="top">
+              <div class="row">
+                <div class="col-xs-1 col-xs-offset-1">
+                  <%= link_to raw("<i class=\"fa fa-angle-right\"></i> #{t('view.about')}") %>
+                </div>
+                <div class="col-xs-1">
+                  <%= link_to raw("<i class=\"fa fa-angle-right\"></i> #{t('view.contact')}") %>
+                </div>
+                <div class="col-xs-1">
+                  <%= link_to raw("<i class=\"fa fa-angle-right\"></i> #{t('view.experts')}") %>
+                </div>
+                <div class="col-xs-7 text-right">
+                  <div class="search">
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <input type="email" class="form-control" placeholder="search keyword">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
             <ul class="navi">
               <li class="left"></li>
-              <li class="logo">
-                <%= image_tag 'frontend_v2/navi_logo.jpg' %>
-              </li>
-              <li class="item"><%= link_to t('view.home.name'), root_path %></li>
+              <li class="item"><%= link_to image_tag('frontend_v2/navi_logo.jpg'), root_path %></li>
               <% @categories.each do |category| %>
               <li class="item">
                 <%= link_to category.name(I18n.locale), category %>
@@ -39,19 +60,21 @@
     <footer>
       <div class="container footer">
         <div class="row">
-          <div class="col-xs-2 footer-item logo">
+          <div class="col-xs-3 footer-item">
+            <h4>about</h4>
+            <%= link_to image_tag('frontend/laomao.png', class: 'img-responsive center-block') %>
           </div>
-          <div class="col-xs-2 footer-item">
+          <div class="col-xs-3 footer-item">
             <h4>subscribe</h4>
             <input type="text" />
           </div>
-          <div class="col-xs-4 footer-item contact">
+          <div class="col-xs-3 footer-item">
             <h4 class="text-center">contact</h4>
-            <%= link_to image_tag('frontend/laomao.png', class: 'img-responsive center-block') %>
+            hello@uklaomao.com
           </div>
-          <div class="col-xs-3 col-xs-offset-1 footer-item follow">
+          <div class="col-xs-3 footer-item">
             <h4>follow</h4>
-            <%= image_tag('frontend_v2/wechat_qrcode.jpg', class: 'img-responsive') %>
+            <%= image_tag('frontend_v2/wechat_qrcode.jpg', class: 'img-responsive center-block') %>
           </div>
         </div>
       </div>

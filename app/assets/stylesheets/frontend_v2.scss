@@ -5,8 +5,14 @@
 //= require frontend_v2/responsive_bootstrap_carousel
 
 div.top {
-  height: 56px;
+  margin: 0;
+  height: 46px;
+  line-height: 46px;
   background-color: #edeef3;
+  div.search {
+    height: 46px;
+    line-height: 42px;
+  }
 }
 
 ul.navi {
@@ -21,7 +27,7 @@ ul.navi {
     height: 76px;
   }
   li.left {
-    width: 2px;
+    width: 20px;
     background: asset-url("frontend_v2/navi_bg_left.jpg") no-repeat;
   }
   li.logo {
@@ -194,26 +200,23 @@ div.home-expert {
   }
 }
 
-h1.post-title {
-  font-weight: bold;
-}
-
-h1.post-title-zh {
-  font-family: 'Microsoft YaHei';
-}
-
-h1.post-title-en {
-  font-family: 'Helvetica';
-}
-
-div.post-quote {
-  margin-top: 10px;
-  color: #5c5b5b;
-  font-size: 16px;
-}
-
 div.post-show {
   margin: 30px 0;
+  h1.post-title {
+    margin: 20px 0 6px;
+    font-weight: bold;
+  }
+  h1.post-title-zh {
+    font-family: 'Microsoft YaHei';
+  }
+  h1.post-title-en {
+    font-family: 'Helvetica';
+  }
+  div.post-quote {
+    margin-bottom: 20px;
+    color: #5c5b5b;
+    font-size: 16px;
+  }
   div.post-content {
     line-height: 24px;
     font-size: 16px;
@@ -324,7 +327,8 @@ div.footer {
   }
   div.footer-item {
     padding-top: 10px;
-    height: 130px;
+    height: 140px;
+    text-align: center;
   }
   div.contact {
     img {
