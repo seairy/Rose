@@ -67,6 +67,7 @@ div.home-magazine {
   h3 {
     color: #fff;
     padding-bottom: 18px;
+    text-align: center;
   }
 }
 
@@ -288,6 +289,26 @@ div.post-category {
         display: -moz-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
+      }
+    }
+  }
+}
+
+div.magazine-list {
+  margin: 30px 0;
+  article {
+    margin-bottom: 20px;
+    div.description {
+      margin-top: 4px;
+      padding: 10px;
+      background-color: #dadbdb;
+      h3 {
+        margin: 0;
+        text-align: center;
+        a {
+          font-size: 20px;
+          color: #231815;
+        }
       }
     }
   }

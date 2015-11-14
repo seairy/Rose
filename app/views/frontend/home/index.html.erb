@@ -10,7 +10,7 @@
         <div class="carousel-inner" role="listbox">
           <% @carousel_posts.each_with_index do |post, i| %>
           <div class="item<%= ' active' if i.zero? %>">
-            <%= image_tag(post.cover.w1800_h1350_fl_q80) %>
+            <%= link_to image_tag(post.cover.w1800_h1350_fl_q80), post %>
             <div class="carousel-caption simple_carousel_caption simple_carousel_caption_center" data-animation="animated fadeInLeft">
               <h1 class="text-left" data-animation="animated fadeInDown"><%= post.title(I18n.locale) %></h1>
               <p class="text-left" data-animation="animated fadeInDown"><%= post.home_description(I18n.locale) %></p>
@@ -34,8 +34,14 @@
         <%= image_tag('frontend_v2/shortcut_1.jpg', class: 'img-responsive') %>
       </div>
       <div class="home-magazine">
-        <%= image_tag 'frontend_v2/magazine_demo.jpg', class: 'img-responsive' %>
-        <h3>《英国老帽儿》第六期</h3>
+        <%= link_to image_tag('frontend_v2/magazine_demo.jpg', class: 'img-responsive'), magazines_path %>
+        <h3>
+          <% if I18n.locale == :en %>
+          《UKLM》ISSUE 06
+          <% else %>
+          《英国老帽儿》第六期
+          <% end %>
+        </h3>
       </div>
     </div>
     <div class="col-xs-10 col-xs-offset-1">
