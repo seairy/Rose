@@ -2,7 +2,7 @@
 module V1
   module Posts
     module Entities
-      class Posts < Grape::Entity
+      class List < Grape::Entity
         expose :id
         expose :cover do |m, o|
           oss_image(m, :cover, :w160_h120_fl_q80)
@@ -25,7 +25,7 @@ module V1
       end
       get do
         posts = Post.published.latest.page(params[:page]).per(20)
-        present posts, with: Posts::Entities::Posts
+        present posts, with: Posts::Entities::List
       end
 
       params do
@@ -34,7 +34,7 @@ module V1
       get ':id' do
         begin
           post = Post.find(params[:id])
-          present post
+          present post, with: Posts::Entities::List
         rescue ActiveRecord::RecordNotFound
           api_error!(10002)
         end

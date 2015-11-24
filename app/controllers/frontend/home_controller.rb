@@ -10,6 +10,6 @@ class Frontend::HomeController < Frontend::BaseController
     @music_posts = Category.where(en_name: 'music').first.posts.published.limit(3)
     @speed_posts = Category.where(en_name: 'speed').first.posts.published.limit(3)
     @gallary_posts = Post.published.sample(8)
-    @experts = Expert.limit(6)
+    @experts = Expert.order(:position).limit(6)
   end
 end
