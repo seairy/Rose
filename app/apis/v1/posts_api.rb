@@ -40,9 +40,9 @@ module V1
       params do
         requires :id, type: Integer
       end
-      get :id do
+      get '/:id' do
         begin
-          post = Post.find_uuid(params[:id])
+          post = Post.find(params[:id])
           present post, with: Posts::Entities::Detail
         rescue ActiveRecord::RecordNotFound
           api_error!(10002)
