@@ -39,6 +39,7 @@ class API < Grape::API
   end
 
   mount V1::PostsAPI
+  mount V1::ExpertsAPI
 
   route :any, '*path' do
     api_error!(10004)
