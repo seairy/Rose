@@ -20,13 +20,13 @@
             <div class="top">
               <div class="row">
                 <div class="col-xs-1 col-xs-offset-1">
-                  <%= link_to raw("<i class=\"fa fa-angle-right\"></i> #{t('view.about')}") %>
+                  <%= link_to raw("<i class=\"fa fa-angle-right\"></i> #{t('view.about')}"), about_path %>
                 </div>
                 <div class="col-xs-1">
                   <%= link_to raw("<i class=\"fa fa-angle-right\"></i> #{t('view.contact')}") %>
                 </div>
                 <div class="col-xs-1">
-                  <%= link_to raw("<i class=\"fa fa-angle-right\"></i> #{t('view.experts')}") %>
+                  <%= link_to raw("<i class=\"fa fa-angle-right\"></i> #{t('view.experts')}"), experts_path %>
                 </div>
                 <div class="col-xs-7 text-right">
                   <div class="search">
@@ -62,7 +62,7 @@
         <div class="row">
           <div class="col-xs-3 footer-item">
             <h4>about</h4>
-            <%= link_to image_tag('frontend/laomao.png', class: 'img-responsive center-block') %>
+            <%= link_to image_tag('frontend/laomao.png', class: 'img-responsive center-block'), about_path %>
           </div>
           <div class="col-xs-3 footer-item">
             <h4>subscribe</h4>

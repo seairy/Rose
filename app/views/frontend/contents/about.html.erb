@@ -1,0 +1,13 @@
+<div class="about-wrap">
+  <div class="container pt20 pb20">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <% if I18n.locale == :en %>
+        <%= image_tag('frontend_v2/about_en.jpg', class: 'img-responsive')%>
+        <% elsif I18n.locale == :zh %>
+        <%= image_tag('frontend_v2/about_zh.jpg', class: 'img-responsive')%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
