@@ -1,42 +1,44 @@
-<div class="container post-show">
-  <div class="row mb20">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 col-xs-12 post-show-header">
-      <h1 class="post-title post-title-<%= I18n.locale %>"><%= @post.title(I18n.locale) %></h1>
-      <div class="post-quote"><%= @post.description(I18n.locale) %></div>
-      <%= image_tag(@post.cover.w1800_h1350_fl_q80, class: 'img-responsive') %>
+<div class="container">
+  <div class="post-show">
+    <div class="row mb20">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 col-xs-12 post-show-header">
+        <h1 class="post-title post-title-<%= I18n.locale %>"><%= @post.title(I18n.locale) %></h1>
+        <div class="post-quote"><%= @post.description(I18n.locale) %></div>
+        <%= image_tag(@post.cover.w1800_h1350_fl_q80, class: 'img-responsive') %>
+      </div>
     </div>
-  </div>
-  <div class="row mb20">
-    <div class="col-md-8 col-md-offset-2 post-content">
-      <%= raw @post.content(I18n.locale).with_wp %>
+    <div class="row mb20">
+      <div class="col-md-8 col-md-offset-2 post-content">
+        <%= raw @post.content(I18n.locale).with_wp %>
+      </div>
     </div>
-  </div>
-  <div class="row mb20">
-    <div class="col-md-8 col-md-offset-2">
-      <h3 class="post-recent-header"><%= t('view.post.recent') %></h3>
+    <div class="row mb20">
+      <div class="col-md-8 col-md-offset-2">
+        <h3 class="post-recent-header"><%= t('view.post.recent') %></h3>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 post-recent">
-      <% @recent_posts.each do |post| %>
-        <div class="col-xs-3 mb10">
-          <article>
-            <%= link_to image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive'), post %>
-            <div class="caption">
-              <h5><%= link_to post.title(I18n.locale), post %></h5>
-              <div class="row">
-                <div class="col-xs-6">
-                  <div class="category"><i class="fa fa-rss"></i> <%= post.category.name(I18n.locale) %></div>
-                </div>
-                <div class="col-xs-6">
-                  <div class="page-view"><i class="fa fa-heart"></i> <%= post.page_view %></div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 post-recent">
+        <% @recent_posts.each do |post| %>
+          <div class="col-xs-3 mb10">
+            <article>
+              <%= link_to image_tag(post.cover.w400_h300_fl_q80, class: 'img-responsive'), post %>
+              <div class="caption">
+                <h5><%= link_to post.title(I18n.locale), post %></h5>
+                <div class="row">
+                  <div class="col-xs-6">
+                    <div class="category"><i class="fa fa-rss"></i> <%= post.category.name(I18n.locale) %></div>
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="page-view"><i class="fa fa-heart"></i> <%= post.page_view %></div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
-        </div>
-        <% end %>
+            </article>
+          </div>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
