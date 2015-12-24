@@ -217,6 +217,9 @@ en:
   view:
     page_prev: Previous
     page_next: Next
+    about: about
+    contact: contact
+    experts: experts
     home:
       name: home
       title: uk laomao

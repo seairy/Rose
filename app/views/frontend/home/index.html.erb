@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-9">
-      <div id="simple_carousel" class="carousel simple_scale animate_text simple_carousel_wrapper" data-ride="carousel" data-interval="5000" data-pause="hover">
+      <div id="simple_carousel" class="carousel simple_scale animate_text simple_carousel_wrapper" data-ride="carousel" data-interval="10000" data-pause="hover">
         <ol class="carousel-indicators simple_carousel_indicators">
           <% @carousel_posts.each_with_index do |post, i| %>
           <li data-target="#simple_carousel" data-slide-to="<%= i %>"<%= raw(' class="active"') if i.zero? %>></li>
@@ -46,7 +46,11 @@
     </div>
     <div class="col-xs-10 col-xs-offset-1">
       <div class="home-subtitle">
-        <%= image_tag 'frontend_v2/home_subtitle.jpg', class: 'img-responsive' %>
+        <% if I18n.locale == :en %>
+        <%= image_tag 'frontend_v2/home_subtitle_en.jpg', class: 'img-responsive' %>
+        <% elsif I18n.locale == :zh %>
+        <%= image_tag 'frontend_v2/home_subtitle_en.jpg', class: 'img-responsive' %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -54,33 +58,39 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <div class="home-feature">
+      <div class="home-highlight">
         <div class="row">
           <div class="col-xs-10 col-xs-offset-1">
-            <%= image_tag 'frontend_v2/tag_feature.jpg' %>
-            <div class="home-feature-canvas">
-              <a href="<%= url_for(@carousel_posts[0]) %>" class="home-feature-large"><%= image_tag @carousel_posts[0].cover.w800_h600_fl_q80, class: 'img-responsive' %></a>
-              <a href="<%= url_for(@carousel_posts[2]) %>" class="home-feature-small home-feature-f5d8b8">
-                <%= image_tag @carousel_posts[2].cover.w800_h600_fl_q80, class: 'img-responsive' %>
-                <h5><%= @carousel_posts[2].title(I18n.locale) %></h5>
-                <p class="description"><%= @carousel_posts[2].home_description(I18n.locale) %></p>
+            <h3>
+              <% if I18n.locale == :en %>
+              <%= image_tag 'frontend_v2/tag_highlights_en.png', class: 'title' %>
+              <% elsif I18n.locale == :zh %>
+              <%= image_tag 'frontend_v2/tag_highlights_zh.png', class: 'title' %>
+              <% end %>
+            </h3>
+            <div class="home-highlight-canvas">
+              <a href="<%= url_for(@recommended_posts[0]) %>" class="home-highlight-large"><%= image_tag @recommended_posts[0].cover.w800_h600_fl_q80, class: 'img-responsive' %></a>
+              <a href="<%= url_for(@recommended_posts[2]) %>" class="home-highlight-small home-highlight-f5d8b8">
+                <%= image_tag @recommended_posts[2].cover.w800_h600_fl_q80, class: 'img-responsive' %>
+                <h5><%= @recommended_posts[2].title(I18n.locale) %></h5>
+                <p class="description"><%= @recommended_posts[2].home_description(I18n.locale) %></p>
               </a>
-              <a href="<%= url_for(@carousel_posts[3]) %>" class="home-feature-small home-feature-3b3633">
-                <%= image_tag @carousel_posts[3].cover.w800_h600_fl_q80, class: 'img-responsive' %>
-                <h5><%= @carousel_posts[3].title(I18n.locale) %></h5>
-                <p class="description"><%= @carousel_posts[3].home_description(I18n.locale) %></p>
+              <a href="<%= url_for(@recommended_posts[3]) %>" class="home-highlight-small home-highlight-3b3633">
+                <%= image_tag @recommended_posts[3].cover.w800_h600_fl_q80, class: 'img-responsive' %>
+                <h5><%= @recommended_posts[3].title(I18n.locale) %></h5>
+                <p class="description"><%= @recommended_posts[3].home_description(I18n.locale) %></p>
               </a>
-              <a href="<%= url_for(@carousel_posts[4]) %>" class="home-feature-small home-feature-5a798b">
-                <%= image_tag @carousel_posts[4].cover.w800_h600_fl_q80, class: 'img-responsive' %>
-                <h5><%= @carousel_posts[4].title(I18n.locale) %></h5>
-                <p class="description"><%= @carousel_posts[4].home_description(I18n.locale) %></p>
+              <a href="<%= url_for(@recommended_posts[4]) %>" class="home-highlight-small home-highlight-5a798b">
+                <%= image_tag @recommended_posts[4].cover.w800_h600_fl_q80, class: 'img-responsive' %>
+                <h5><%= @recommended_posts[4].title(I18n.locale) %></h5>
+                <p class="description"><%= @recommended_posts[4].home_description(I18n.locale) %></p>
               </a>
-              <a href="<%= url_for(@carousel_posts[5]) %>" class="home-feature-small home-feature-dcdcdc">
-                <%= image_tag @carousel_posts[5].cover.w800_h600_fl_q80, class: 'img-responsive' %>
-                <h5><%= @carousel_posts[5].title(I18n.locale) %></h5>
-                <p class="description"><%= @carousel_posts[5].home_description(I18n.locale) %></p>
+              <a href="<%= url_for(@recommended_posts[5]) %>" class="home-highlight-small home-highlight-dcdcdc">
+                <%= image_tag @recommended_posts[5].cover.w800_h600_fl_q80, class: 'img-responsive' %>
+                <h5><%= @recommended_posts[5].title(I18n.locale) %></h5>
+                <p class="description"><%= @recommended_posts[5].home_description(I18n.locale) %></p>
               </a>
-              <a href="<%= url_for(@carousel_posts[1]) %>" class="home-feature-large"><%= image_tag @carousel_posts[1].cover.w800_h600_fl_q80, class: 'img-responsive' %></a>
+              <a href="<%= url_for(@recommended_posts[1]) %>" class="home-highlight-large"><%= image_tag @recommended_posts[1].cover.w800_h600_fl_q80, class: 'img-responsive' %></a>
             </div>
           </div>
         </div>
@@ -92,7 +102,13 @@
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <div class="home-category">
-        <h3><%= image_tag 'frontend_v2/tag_people.jpg' %></h3>
+        <h3>
+          <% if I18n.locale == :en %>
+          <%= image_tag 'frontend_v2/tag_people_en.png', class: 'title' %>
+          <% elsif I18n.locale == :zh %>
+          <%= image_tag 'frontend_v2/tag_people_zh.png', class: 'title' %>
+          <% end %>
+        </h3>
         <div class="row">
           <% @people_posts.each do |post| %>
           <div class="col-xs-4">
@@ -116,7 +132,13 @@
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <div class="home-category">
-        <h3><%= image_tag 'frontend_v2/tag_place.jpg' %></h3>
+        <h3>
+          <% if I18n.locale == :en %>
+          <%= image_tag 'frontend_v2/tag_places_en.png', class: 'title' %>
+          <% elsif I18n.locale == :zh %>
+          <%= image_tag 'frontend_v2/tag_places_zh.png', class: 'title' %>
+          <% end %>
+        </h3>
         <div class="row">
           <% @place_posts.each do |post| %>
           <div class="col-xs-4">
@@ -140,7 +162,13 @@
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <div class="home-category">
-        <h3><%= image_tag 'frontend_v2/tag_music.jpg' %></h3>
+        <h3>
+          <% if I18n.locale == :en %>
+          <%= image_tag 'frontend_v2/tag_music_en.png', class: 'title' %>
+          <% elsif I18n.locale == :zh %>
+          <%= image_tag 'frontend_v2/tag_music_zh.png', class: 'title' %>
+          <% end %>
+        </h3>
         <div class="row">
           <% @music_posts.each do |post| %>
           <div class="col-xs-4">
@@ -164,7 +192,7 @@
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <div class="home-archive">
-        <h3><%= t('view.home.archive') %></h3>
+        <h3><%= t('view.home.popular') %></h3>
         <div class="row">
           <div class="col-xs-10 col-xs-offset-1">
             <div class="row">
@@ -193,12 +221,16 @@
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <div class="home-expert">
-        <%= image_tag 'frontend_v2/tag_team.jpg', class: 'center-block title' %>
+        <% if I18n.locale == :en %>
+        <%= image_tag 'frontend_v2/tag_expert_en.jpg', class: 'center-block title' %>
+        <% elsif I18n.locale == :zh %>
+        <%= image_tag 'frontend_v2/tag_expert_zh.jpg', class: 'center-block title' %>
+        <% end %>
         <div class="row">
           <% @experts.each do |expert| %>
           <div class="col-xs-2">
             <div class="home-expert-item">
-              <%= link_to image_tag(expert.portrait.w340_h340_fl_q80, class: 'img-responsive img-thumbnail img-circle portrait'), experts_path %>
+              <%= link_to image_tag(expert.portrait.w340_h340_fl_q80, class: 'img-responsive portrait'), experts_path %>
               <h5><%= link_to expert.zh_name, experts_path %></h5>
               <h5><%= link_to expert.en_name, experts_path %></h5>
             </div>

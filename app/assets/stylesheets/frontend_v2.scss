@@ -59,6 +59,8 @@ div.carousel-caption {
     padding-right: 30px;
   }
   h1 {
+    margin: 4px;
+    padding-top: 8px;
     font-size: 60px;
     font-weight: bold;
   }
@@ -82,13 +84,21 @@ div.home-magazine {
 
 div.home-subtitle {
   padding: 20px 0;
+  img {
+    width: 1200px;
+  }
 }
 
 
-div.home-feature {
+div.home-highlight {
   padding: 40px 0;
   background-color: #eaeaea;
-  div.home-feature-canvas {
+  h3 {
+    img.title {
+      height: 39px;
+    }
+  }
+  div.home-highlight-canvas {
     margin-top: 20px;
     a {
       display: block;
@@ -96,10 +106,10 @@ div.home-feature {
       height: 354px;
       overflow: hidden;
     }
-    a.home-feature-large {
+    a.home-highlight-large {
       width: 50%;
     }
-    a.home-feature-small {
+    a.home-highlight-small {
       width: 25%;
       h5 {
         margin: 14px 20px;
@@ -110,19 +120,19 @@ div.home-feature {
         margin: 14px 20px;
       }
     }
-    a.home-feature-f5d8b8 {
+    a.home-highlight-f5d8b8 {
       background-color: #465aa8;
       color: #fff;
     }
-    a.home-feature-3b3633 {
+    a.home-highlight-3b3633 {
       color: #fff;
       background-color: #3b3633;
     }
-    a.home-feature-5a798b {
+    a.home-highlight-5a798b {
       color: #fff;
       background-color: #5a798b;
     }
-    a.home-feature-dcdcdc {
+    a.home-highlight-dcdcdc {
       color: #000;
       background-color: #dcdcdc;
     }
@@ -131,6 +141,11 @@ div.home-feature {
 
 div.home-category {
   padding: 20px 0;
+  h3 {
+    img.title {
+      height: 39px;
+    }
+  }
   article {
     position: relative;
     div.caption {
@@ -196,6 +211,8 @@ div.home-expert {
   margin: 40px 0;
   img.title {
     margin-bottom: 30px;
+    width: 600px;
+    height: 91px;
   }
   div.home-expert-item {
     h5 {
@@ -324,6 +341,20 @@ div.magazine-list {
   }
 }
 
+div.experts {
+  p.expert-zh-name {
+    margin: 2px 0;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  p.expert-en-name {
+    margin: 2px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #727172;
+  }
+}
+
 div.footer {
   background-color: #ae0020;
   color: #fff;
@@ -344,7 +375,7 @@ div.footer {
   }
   div.follow {
     img {
-      height: 60px;
+      height: 80px;
     }
   }
   div.copyright {
