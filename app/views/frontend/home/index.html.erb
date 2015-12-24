@@ -12,8 +12,8 @@
           <div class="item<%= ' active' if i.zero? %>">
             <%= link_to image_tag(post.cover.w1800_h1350_fl_q80), post %>
             <div class="carousel-caption simple_carousel_caption simple_carousel_caption_center" data-animation="animated fadeInLeft">
-              <h1 class="text-left" data-animation="animated fadeInDown"><%= post.title(I18n.locale) %></h1>
-              <p class="text-left" data-animation="animated fadeInDown"><%= post.home_description(I18n.locale) %></p>
+              <h1 class="text-left" data-animation="animated fadeInDown"><%= link_to post.title(I18n.locale), post %></h1>
+              <p class="text-left" data-animation="animated fadeInDown"><%= link_to post.home_description(I18n.locale), post %></p>
               <%#= link_to t('view.post.read_more'), post, data: { animation: 'animated fadeInDown' }, class: 'simple_carousel_transparent_button carousel-read-more' %>
             </div>
           </div>
@@ -198,9 +198,9 @@
           <% @experts.each do |expert| %>
           <div class="col-xs-2">
             <div class="home-expert-item">
-              <%= image_tag(expert.portrait.w340_h340_fl_q80, class: 'img-responsive img-thumbnail img-circle portrait') %>
-              <h5><%= expert.zh_name %></h5>
-              <h5><%= expert.en_name %></h5>
+              <%= link_to image_tag(expert.portrait.w340_h340_fl_q80, class: 'img-responsive img-thumbnail img-circle portrait'), experts_path %>
+              <h5><%= link_to expert.zh_name, experts_path %></h5>
+              <h5><%= link_to expert.en_name, experts_path %></h5>
             </div>
           </div>
           <% end %>
