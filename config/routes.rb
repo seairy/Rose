@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     post 'search', to: 'searches#create', as: :search
     post 'subscribe', to: 'subscribers#toggle', as: :subscribe
   end
+  namespace :wechat do
+    resources :posts
+  end
   namespace :cms do
     root 'dashboard#index'
     get 'dashboard', to: 'dashboard#index', as: :dashboard
