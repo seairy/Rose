@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="container">
+      <div id="logo"><%= image_tag('wechat/logo.jpg') %></div>
       <%= yield %>
     </div>
     <%= javascript_include_tag 'wechat', 'data-turbolinks-track' => true %>
