@@ -46,11 +46,7 @@
     </div>
     <div class="col-xs-10 col-xs-offset-1">
       <div class="home-subtitle">
-        <% if I18n.locale == :en %>
-        <%= image_tag 'frontend_v2/home_subtitle_en.jpg', class: 'img-responsive' %>
-        <% elsif I18n.locale == :zh %>
         <%= image_tag 'frontend_v2/home_subtitle_zh.jpg', class: 'img-responsive' %>
-        <% end %>
       </div>
     </div>
   </div>
@@ -220,12 +216,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
-      <div class="home-expert">
-        <% if I18n.locale == :en %>
-        <%= image_tag 'frontend_v2/tag_expert_en.jpg', class: 'center-block title' %>
-        <% elsif I18n.locale == :zh %>
-        <%= image_tag 'frontend_v2/tag_expert_zh.jpg', class: 'center-block title' %>
-        <% end %>
+      <div class="home-archive">
+        <h3><%= t('view.home.popular') %></h3>
         <div class="row">
           <% @experts.each do |expert| %>
           <div class="col-xs-2">
