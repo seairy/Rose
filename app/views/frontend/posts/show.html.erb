@@ -5,7 +5,7 @@
       <div class="col-md-8 col-xs-12 post-show-header">
         <h1 class="post-title post-title-<%= I18n.locale %>"><%= @post.title(I18n.locale) %></h1>
         <div class="post-quote"><%= @post.description(I18n.locale) %></div>
-        <%= image_tag(@post.cover.w1800_h1350_fl_q80, class: 'img-responsive') %>
+        <%= image_tag("#{@post.cover.w1800_h1350_fl_q80}-WithWP", class: 'img-responsive') %>
       </div>
     </div>
     <div class="row mb20">
