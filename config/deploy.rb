@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
-# config valid only for current version of Capistrano
-lock '3.3.5'
+lock '3.4.0'
 
 set :scm, :git
 set :repo_url, 'git@github.com:seairy/Rose.git'
