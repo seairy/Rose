@@ -2,10 +2,10 @@
 set :stage, :staging
 set :branch, 'master'
 set :rvm_type, :user
-set :rvm_ruby_version, '2.1.0'
+set :rvm_ruby_version, '2.2.4'
 set :deploy_user, 'deploy'
 
-server '123.57.157.161', user: 'deploy', roles: %w{web app db}
+server '60.205.167.123', user: 'deploy', roles: %w{web app db}
 
-set :deploy_to, "/srv/www/RoseStaging"
+set :deploy_to, "/srv/www/Rose"
 set :rails_env, :production
